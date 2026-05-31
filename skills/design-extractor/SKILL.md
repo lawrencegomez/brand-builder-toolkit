@@ -1,28 +1,31 @@
 ---
 name: design-extractor
-description: Extracts a color palette, typography system, and layout principles from a specified URL to generate a baseline DESIGN.md file.
+description: Extracts a color palette, typography system, and layout principles from a specified URL using the designlang CLI tool.
 ---
 
 # Design Extractor
 
-When the user provides a URL of a website they admire, the agent should use its web reading or browsing tools to analyze the visual components of that website.
+When the user provides a URL of a website they admire, or when triggered by the `zero-to-one-builder`, you must extract the visual design system from that site using Lawrence's preferred `designlang` tool.
 
 ## Extraction Process:
 
-1. **Read the Target Website:** Use the `read_url_content` or Chrome DevTools skills to fetch the website. Look for CSS variables, font families, and color hex codes.
-2. **Identify Color Palette:** Extract the primary, secondary, and background colors. Map them to semantic roles (e.g., Primary Accent, Background, Text).
-3. **Identify Typography:** Identify the heading fonts and body fonts.
-4. **Identify Layout Elements:** Note the spacing (padding/margins), border radii (sharp, rounded, pill), and shadow types (flat, soft, hard).
+1. **Run DesignLang CLI:**
+   Execute the following command in the terminal:
+   ```bash
+   npx designlang <url> --full --framework shadcn -o ./design-extract
+   ```
+   *(Note: The first time this runs, it will download Playwright and Chromium. Let it finish.)*
 
-## Action Required:
+2. **Read Extracted Tokens:**
+   Read the resulting JSON and CSS files emitted in the `./design-extract` directory.
 
-Generate a `DESIGN.md` file in the root of the user's workspace using the Google Stitch DESIGN.md standard. 
+3. **Format for Lawrence's System:**
+   Translate those tokens into the `LAWRENCE-DESIGN.md` format (or the standard Stitch `DESIGN.md`). Ensure you map:
+   - Visual Theme & Atmosphere
+   - Color Palette & Roles (Hex codes)
+   - Typography Rules
+   - Component Stylings (Buttons, inputs)
+   - Depth & Elevation
 
-The `DESIGN.md` must include:
-- Visual Theme & Atmosphere
-- Color Palette & Roles (with Hex codes)
-- Typography Rules
-- Component Stylings (Buttons, inputs)
-- Depth & Elevation
-
-Inform the user that the `DESIGN.md` has been successfully created and ask if they would like to proceed with generating the website using `gstack-superpowers`.
+4. **Action:**
+   Save the output to the root directory and confirm with the user that the design system has been successfully extracted.
