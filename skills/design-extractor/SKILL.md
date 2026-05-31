@@ -19,8 +19,8 @@ When the user provides a URL of a website they admire, or when triggered by the 
 2. **Read Extracted Tokens:**
    Read the resulting JSON and CSS files emitted in the `./design-extract` directory.
 
-3. **Format for Lawrence's System:**
-   Translate those tokens into the `LAWRENCE-DESIGN.md` format (or the standard Stitch `DESIGN.md`). Ensure you map:
+3. **Format for Custom Design System:**
+   Translate those tokens into a fresh `DESIGN.md` file using standard design system formatting. Ensure you map:
    - Visual Theme & Atmosphere
    - Color Palette & Roles (Hex codes)
    - Typography Rules

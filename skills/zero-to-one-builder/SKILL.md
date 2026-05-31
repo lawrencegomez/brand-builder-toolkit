@@ -16,15 +16,15 @@ This is the primary workflow for taking a project from an unformed idea to a shi
 ## Step 2: Design Inspiration & Extraction
 1. Ask the user for examples of websites whose design they admire.
 2. Once URLs are provided, invoke the `design-extractor` skill to run `npx designlang` on those URLs. 
-3. Incorporate the resulting tokens into the project's design system.
+3. Incorporate the resulting tokens into a fresh, custom `DESIGN.md` file for this specific project.
 
 ## Step 3: Mockup Generation
-1. Use the `Taste` bundle (e.g., `/design-shotgun` or `taste-skill`) to generate 3 combined mockup variants for the user based on the `BRAND_GUIDELINES.md` and the extracted design language.
+1. Use the `taste-skill` (with `/design-shotgun` as a backup) to generate 3 combined mockup variants for the user based on the `BRAND_GUIDELINES.md` and the newly extracted `DESIGN.md`.
 2. Present the options to the user and wait for their selection.
 
 ## Step 4: Finalization & Execution
 1. Once the user selects a mockup, use GStack compound engineering (`/ship`) to build out the React/Next.js/HTML components.
-2. Ensure you strictly adhere to the selected `LAWRENCE-DESIGN.md` rules.
+2. Ensure you strictly adhere to the project's new `DESIGN.md` rules.
 
 ## Step 5: QA & SEO Audit
 1. Run the `marketing-seo-audit` skill.
