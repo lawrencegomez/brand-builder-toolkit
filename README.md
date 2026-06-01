@@ -6,19 +6,24 @@ It combines customized workflows (GStack `/office-hours`, `taste-skill`, `design
 
 ## Prerequisites & Installation
 
-To install this toolkit on a fresh machine (for use with Claude Code), simply copy and paste these three terminal commands:
+To install this toolkit on a fresh machine (for use with Claude Code), simply copy and paste these four terminal commands:
 
 **1. Install GStack:** 
 ```bash
 git clone https://github.com/garrytan/gstack.git ~/.gstack
 ```
 
-**2. Download the Brand Builder Toolkit:**
+**2. Install the Taste Skill Bundle:**
+```bash
+git clone https://github.com/Leonxlnx/taste-skill.git ~/.claude/skills/taste-skill
+```
+
+**3. Download the Brand Builder Toolkit:**
 ```bash
 git clone https://github.com/lawrencegomez/brand-builder-toolkit.git ~/brand-builder-toolkit
 ```
 
-**3. Link the Skills to Claude Code:**
+**4. Link the Brand Builder Skills to Claude Code:**
 ```bash
 ln -sf ~/brand-builder-toolkit/skills/* ~/.claude/skills/
 ```
