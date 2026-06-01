@@ -6,16 +6,24 @@ It combines customized workflows (GStack `/office-hours`, `taste-skill`, `design
 
 ## Prerequisites & Installation
 
-This toolkit relies on external skills to function. Before using it, make sure you have installed the required dependencies:
+To install this toolkit on a fresh machine (for use with Claude Code), simply copy and paste these three terminal commands:
 
-1. **Install GStack**: 
-   Ensure you have the GStack plugin installed in your environment. If you don't, clone it into your workspace or point your IDE to `~/.gstack`. This gives the agent access to the `/office-hours` and `/ship` commands.
-2. **Install the Brand Builder Toolkit**:
-   Download or clone this repository to your computer.
-3. **Configure Your IDE**:
-   In your Cloud Code / Antigravity IDE, navigate to settings and add the `brand-builder-toolkit` directory as a local plugin.
-4. **Start a New Project**:
-   Open a completely fresh, empty directory where you want your new website code to live.
+**1. Install GStack:** 
+```bash
+git clone https://github.com/garrytan/gstack.git ~/.gstack
+```
+
+**2. Download the Brand Builder Toolkit:**
+```bash
+git clone https://github.com/lawrencegomez/brand-builder-toolkit.git ~/brand-builder-toolkit
+```
+
+**3. Link the Skills to Claude Code:**
+```bash
+ln -sf ~/brand-builder-toolkit/skills/* ~/.claude/skills/
+```
+
+*Note: You can then open a completely fresh, empty directory where you want your new website code to live and start Claude Code.*
 
 ## Workflow: The Zero-To-One Builder
 
