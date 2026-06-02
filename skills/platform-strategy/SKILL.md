@@ -5,25 +5,47 @@ description: Evaluates the business requirements and recommends the optimal host
 
 # Platform Architecture & Strategy
 
-Before generating any code or final assets, you must act as a Senior Technical Architect to evaluate the optimal platform for the user's business. You are dealing with modern AI tools (like Claude Code) which means building custom software is exponentially faster and easier than it used to be. Do not default to a CMS simply because the user mentions "e-commerce" or "subscriptions."
+Before generating any code or final assets, you must act as a Senior Technical Architect to evaluate the optimal platform for the user's business. 
 
-## Step 1: Synthesize Business Context
-Review the goals, brand identity, and technical capacity gathered during the `/office-hours` and branding phase. Engage the user in a deep functional consultation:
-- What are the core features required (e.g., e-commerce, user auth, dynamic dashboards, content management)?
-- Are there unique workflows that standard templates might restrict?
-- What is the appetite for long-term maintenance versus a turnkey monthly subscription?
+Treat AI-assisted custom development (via Claude Code) as a serious strategic option, not a novelty. Evaluate whether the business benefits from owning a differentiated workflow, interface, funnel, or data model enough to justify maintenance. Compare that against the operational leverage of managed platforms.
 
-## Step 2: Present Nuanced Options
-Present a highly customized analysis of their options. You should focus on **Wix, Shopify, Squarespace**, and **Custom Build (React/Next.js)**. Do NOT recommend WordPress.
+## Step 1: Deep Diagnostic Consultation
+Do not ask generic questions. Drill into the operational realities of the business:
+- **Operations:** Who updates the site day-to-day? Is the owner non-technical?
+- **Commerce Complexity:** Are there physical products, subscriptions, complex shipping/tax rules, or abandoned cart needs?
+- **Differentiators:** Is checkout differentiation strategic, or just operational? Are there unique workflows?
+- **Risk Tolerance:** What happens if the site breaks on a weekend? Is there a maintenance budget?
 
-For each option, provide:
-1. **Pros & Cons specific to THEIR business.** (e.g., "A custom Next.js app with Stripe allows you to do a highly unique supplement quiz funnel that Shopify limits, but requires more manual setup.")
-2. **Cost Analysis:** Upfront build effort (AI-assisted) vs. ongoing monthly SaaS fees.
-3. **Template vs. Custom:** Mention if there are starting templates for the CMS platforms that align with their brand, versus the total freedom of a custom build.
+## Step 2: Present the Architectural Options
+Avoid false binaries. Provide a customized analysis including hybrid architectures. You must cover **Wix, Shopify, Squarespace**, and **Custom Build (React/Next.js)**. (Note: Exclude WordPress per product constraints).
 
-*Crucial Directive:* Remind the user of the power of modern AI. A custom iOS app or a Next.js e-commerce storefront can now be built entirely from scratch via Claude Code in a matter of hours. Weigh this velocity against the restrictive, but managed, nature of Shopify/Wix/Squarespace.
+For each option, evaluate against this framework:
+- **Initial Build Cost vs. Monthly Platform Fees**
+- **Time to Launch**
+- **Long-term Maintenance Appetite & Developer Dependency**
 
-## Step 3: Architecture Decision
-Do not force an "if-then" path. Let the user review your comprehensive analysis and make an informed decision. 
+### The 3 Core Paths + Hybrids:
+1. **Pure CMS (Shopify/Squarespace/Wix):** High operational leverage, low maintenance, turnkey checkout. Best for commodity stores and non-technical operators.
+2. **Pure Custom (Next.js/React via AI):** Maximum differentiation. Modern AI tools can compress build time dramatically, but production readiness still requires security, testing, and maintenance ownership.
+3. **Hybrid Architecture:** (e.g., Headless Shopify with a custom Next.js storefront, or a Custom Funnel that routes to a standard Stripe checkout).
 
-Once they decide, output their choice and your strategic reasoning into a `PLATFORM_DECISION.md` file in the workspace. The master orchestrator will read this file to determine the next steps.
+*Red Flag Logic:* You MUST explicitly advise *against* a custom build if the owner is non-technical, needs frequent daily content edits, requires complex inventory/tax routing, or has zero budget for weekend maintenance.
+
+## Step 3: Structured Decision Output
+Consultative does not mean neutral. Provide a specific, best-fit recommendation and a runner-up. Once the user makes a final decision, write the result to `PLATFORM_DECISION.md` using the exact structure below. The master orchestrator relies on this format.
+
+```markdown
+# Platform Architecture Decision
+
+## Business Context & Required Capabilities
+[Brief summary of the business operations, team technical capacity, and core feature needs]
+
+## Recommended Platform
+[The selected platform path, e.g., Shopify, Custom Next.js, or Headless Hybrid]
+
+## Tradeoffs & Risks
+[What the user sacrifices by choosing this path, and the operational risks involved]
+
+## Next-Step Build Plan
+[Clear directive for the orchestrator: either proceed to code generation via /ship, OR stop and finalize design assets for CMS implementation]
+```
