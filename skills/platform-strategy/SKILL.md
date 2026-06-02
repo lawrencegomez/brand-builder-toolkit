@@ -3,33 +3,27 @@ name: platform-strategy
 description: Evaluates the business requirements and recommends the optimal hosting and platform architecture (Shopify vs. Squarespace vs. Custom Code).
 ---
 
-# Platform Strategy
+# Platform Architecture & Strategy
 
-Before generating any application code, you must evaluate the functional and business requirements of the user's project to recommend the correct platform architecture. Pushing every project into a custom React/Next.js build is an anti-pattern.
+Before generating any code or final assets, you must act as a Senior Technical Architect to evaluate the optimal platform for the user's business. You are dealing with modern AI tools (like Claude Code) which means building custom software is exponentially faster and easier than it used to be. Do not default to a CMS simply because the user mentions "e-commerce" or "subscriptions."
 
-## Step 1: Functional Interview
-Ask the user what specific functionality their site needs. Example questions:
-- "Will you be selling physical goods or subscriptions?"
-- "Do you need complex, interactive web-app functionality (like a dashboard or SaaS portal)?"
-- "Are you heavily reliant on email marketing automation and cart recovery?"
+## Step 1: Synthesize Business Context
+Review the goals, brand identity, and technical capacity gathered during the `/office-hours` and branding phase. Engage the user in a deep functional consultation:
+- What are the core features required (e.g., e-commerce, user auth, dynamic dashboards, content management)?
+- Are there unique workflows that standard templates might restrict?
+- What is the appetite for long-term maintenance versus a turnkey monthly subscription?
 
-## Step 2: Present Options & Pricing
-Based on their answers, present the most logical platform choices, including pros, cons, and estimated costs. Avoid recommending WordPress or Wix unless specifically requested.
+## Step 2: Present Nuanced Options
+Present a highly customized analysis of their options. You should focus on **Wix, Shopify, Squarespace**, and **Custom Build (React/Next.js)**. Do NOT recommend WordPress.
 
-1. **Shopify** 
-   - *Best for:* E-commerce, physical goods, dropshipping, inventory management.
-   - *Cost:* ~$39/month + transaction fees.
-   - *Agent's Role:* The AI will provide the `DESIGN.md`, visual mockups, and SEO copy for the user to implement via a Shopify theme.
+For each option, provide:
+1. **Pros & Cons specific to THEIR business.** (e.g., "A custom Next.js app with Stripe allows you to do a highly unique supplement quiz funnel that Shopify limits, but requires more manual setup.")
+2. **Cost Analysis:** Upfront build effort (AI-assisted) vs. ongoing monthly SaaS fees.
+3. **Template vs. Custom:** Mention if there are starting templates for the CMS platforms that align with their brand, versus the total freedom of a custom build.
 
-2. **Squarespace**
-   - *Best for:* Service businesses, simple portfolios, restaurants, basic scheduling.
-   - *Cost:* ~$23/month.
-   - *Agent's Role:* The AI will provide the `DESIGN.md`, visual mockups, and SEO copy for the user to implement via the Squarespace builder.
+*Crucial Directive:* Remind the user of the power of modern AI. A custom iOS app or a Next.js e-commerce storefront can now be built entirely from scratch via Claude Code in a matter of hours. Weigh this velocity against the restrictive, but managed, nature of Shopify/Wix/Squarespace.
 
-3. **Custom Build (React/Next.js/HTML)**
-   - *Best for:* Unique web applications, highly custom UI/UX, SaaS tools, or $0/month hobby hosting.
-   - *Cost:* $0/month on Vercel/Netlify (Hobby tier), but requires technical maintenance.
-   - *Agent's Role:* The AI will use GStack `/ship` to write and build the actual codebase for the user.
+## Step 3: Architecture Decision
+Do not force an "if-then" path. Let the user review your comprehensive analysis and make an informed decision. 
 
-## Step 3: Decision
-Wait for the user to select a path. Output their decision to a `PLATFORM_DECISION.md` file in the workspace so the orchestrator knows whether to proceed to custom coding or stop at providing design assets.
+Once they decide, output their choice and your strategic reasoning into a `PLATFORM_DECISION.md` file in the workspace. The master orchestrator will read this file to determine the next steps.
