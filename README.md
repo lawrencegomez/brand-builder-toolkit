@@ -43,25 +43,30 @@ The agent will seamlessly guide you through the following phases:
 - **Skills Used:** GStack `/office-hours` and `/browse`.
 - **Expected Outcome:** The agent will ask you guided questions and output a foundational `BRAND_GUIDELINES.md` document.
 
-### 2. Design Extraction
+### 2. Platform Strategy
+- **Goal:** Evaluate your business functionality (e-commerce, subscriptions, complex logic) to pick the right hosting platform.
+- **Skills Used:** `platform-strategy`.
+- **Expected Outcome:** The agent presents pros, cons, and pricing for Shopify, Squarespace, and Custom Builds, waiting for you to pick the right architecture in `PLATFORM_DECISION.md`.
+
+### 3. Design Extraction
 - **Goal:** Capture the visual identity of websites you admire.
 - **Tools Used:** The `design-extractor` skill running the `npx designlang` CLI tool.
 - **Expected Outcome:** The agent will ask for inspiration URLs, extract their exact CSS tokens, and create a fresh, custom `DESIGN.md` tailored specifically for your project from scratch.
 
-### 3. Mockup Generation
+### 4. Mockup Generation
 - **Goal:** Visually preview how your brand looks before building the actual codebase.
 - **Skills Used:** The `taste-skill` (with `/design-shotgun` as a backup).
 - **Expected Outcome:** The AI will combine your brand guidelines and extracted design tokens to generate multiple pixel-perfect mockups for you to choose from.
 
-### 4. Execution
-- **Goal:** Turn the selected mockup into production-ready code.
-- **Skills Used:** GStack `/ship`.
-- **Expected Outcome:** The AI builds out the modular React/Next.js components, adhering strictly to the custom `DESIGN.md`.
+### 5. Execution (Forked)
+- **Goal:** Turn the selected mockup into production-ready code, OR stop and prep assets for a CMS.
+- **Skills Used:** GStack `/ship` (if Custom Build).
+- **Expected Outcome:** If you chose a Custom Build, the AI builds out the modular React/Next.js components. If you chose Shopify/Squarespace, the AI stops coding and finalizes your visual assets and copy deck so you can build it in the CMS.
 
-### 5. QA & SEO Audit
+### 6. QA & SEO Audit
 - **Goal:** Ensure the site converts and meets modern web standards.
 - **Skills Used:** `marketing-seo-audit`.
-- **Expected Outcome:** A final pass over the code to optimize CTA logic, rewrite any "fluff" copy, and ensure semantic HTML and WCAG accessibility standards.
+- **Expected Outcome:** A final pass over the code (or CMS copy deck) to optimize CTA logic, rewrite any "fluff" copy, and ensure semantic HTML and WCAG accessibility standards.
 
 ---
 Enjoy building premium web applications effortlessly!
