@@ -21,7 +21,7 @@ Avoid false binaries. Provide a customized analysis including hybrid architectur
 
 For each option, evaluate against this framework:
 - **Initial Build Cost vs. Monthly Platform Fees**
-- **Time to Launch**
+- **Time to Launch (AI Velocity):** *CRITICAL RULE:* Do NOT estimate using traditional human developer hours. A custom Next.js storefront that takes a human 3 weeks takes Claude Code 45 minutes to scaffold. Quote timelines in AI-velocity (minutes/hours), not days/weeks.
 - **Long-term Maintenance Appetite & Developer Dependency**
 
 ### The 3 Core Paths + Hybrids:
