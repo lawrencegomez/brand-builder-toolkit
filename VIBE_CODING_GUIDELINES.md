@@ -60,6 +60,18 @@ For multi-step tasks, state a brief plan:
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
+### 5. Context Management (The 70% Rule)
+
+**Don't let the AI degrade. Force fresh threads.**
+
+One of the biggest mistakes beginners make is keeping a single AI conversation going for far too long. As the context window fills up, the AI starts to hallucinate, forget earlier instructions, and overwrite good code. 
+
+- **The Rule:** When you feel the conversation getting long (heavy code edits, large file reads, or 30+ messages), tell the AI: *"Context is getting high. Save a durable handoff document summarizing where we are, what decisions have been settled, and the immediate next steps."*
+- **Fresh Start:** Once the AI writes that handoff document, immediately close the conversation and start a completely fresh thread.
+- **The Prompt:** In the new thread, point the AI to the handoff document: *"Read the handoff document at [Path] and continue the next step."*
+
+This guarantees the AI stays sharp, focused, and mathematically precise, rather than collapsing under the weight of a massive chat history.
+
 ---
 
 **These guidelines are working if:** you see fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and the AI asks clarifying questions *before* implementation rather than apologizing after mistakes.
