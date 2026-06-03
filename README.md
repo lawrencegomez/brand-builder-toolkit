@@ -68,5 +68,9 @@ The agent will seamlessly guide you through the following phases:
 - **Skills Used:** `marketing-seo-audit`.
 - **Expected Outcome:** A final pass over the code (or CMS copy deck) to optimize CTA logic, rewrite any "fluff" copy, and ensure semantic HTML and WCAG accessibility standards.
 
+## Bonus: Vibe Coding Guidelines
+
+If you want to maximize your velocity and minimize LLM coding mistakes, check out the [Vibe Coding Guardrails (Karpathy-Inspired)](./VIBE_CODING_GUIDELINES.md) included in this repository. These behavioral guidelines will fundamentally improve how you steer AI agents.
+
 ---
 Enjoy building premium web applications effortlessly!
