@@ -1,6 +1,6 @@
 ---
 name: design-system
-description: Builds a brand's reusable design system before any page is built - colors with roles, the type scale, spacing, radii, shadows, motion, and core components - as brand/DESIGN.md, styles/tokens.css, a live design-system.html page, and a Design System board in Paper (or Claude artifacts / local HTML without Paper). Use for Phase 5 of the brand builder, or when someone says "design system", "style guide", "brand tokens", "make my site consistent", or "set up my colors and fonts".
+description: Builds a brand's reusable design system before any page is built - colors with roles, the type scale, spacing, radii, shadows, motion, and core components - as DESIGN.md, styles/tokens.css, a live design-system.html page, and a Design System board in Paper (or Claude artifacts / local HTML without Paper). Use for Phase 5 of the brand builder, or when someone says "design system", "style guide", "brand tokens", "make my site consistent", or "set up my colors and fonts".
 ---
 
 # Design System
@@ -22,7 +22,7 @@ and one change updates everything.
    Paper edit in a session, and screenshot your work in Paper to check it.
 2. **`styles/tokens.css`**: the code version. Pages use only these variables, never
    raw hex codes or pixel values.
-3. **`brand/DESIGN.md`**: the written rules (when to use what, and what never to do).
+3. **`DESIGN.md`**: the written rules (when to use what, and what never to do).
 
 No Paper? Use a Claude artifact for the board when running in Claude Desktop or
 claude.ai; otherwise `design-system.html` is the visual home. Either way, keep all
@@ -31,7 +31,11 @@ three in agreement.
 ## Step 1: Draft the tokens
 
 Read `brand/BRAND.md`, `brand/INSPIRATION.md` (the recipe), and the Typography section
-of `brand/DESIGN.md`. Start from [templates/tokens.css](templates/tokens.css) and fill in:
+of `DESIGN.md`. Start from [templates/tokens.css](templates/tokens.css) and fill in.
+**Keep the template's token names** (`--color-bg`, `--text-hero`, `--space-4`...): they
+are the contract `design-system.html` and future pages rely on. Change the values, and
+add brand-specific tokens alongside (for example `--color-honey-sidr`); do not rename.
+If you must rename, update `design-system.html` in the same step.
 
 - **Color, by role, not by name**: background, surface, text, text-muted (tinted, not
   flat grey), border, accent (one), accent-contrast (text on accent), plus success /
@@ -50,8 +54,8 @@ of `brand/DESIGN.md`. Start from [templates/tokens.css](templates/tokens.css) an
 
 Use the `taste-skill` (or `soft-skill`, `minimalist-skill`, `brutalist-skill` when the
 brand points that way) to keep the result distinctive rather than template-like.
-If the brand has no logo yet, use the `brandkit` skill to explore logo directions
-now, so the system and the mark grow together.
+If the brand has no logo yet, sketch logo directions now so the system and the mark
+grow together (see the logo step in `visual-assets`).
 
 ## Step 2: Show it
 
@@ -67,7 +71,7 @@ now, so the system and the mark grow together.
 4. Iterate until they are happy. Each change: Paper first, then `tokens.css`, then
    screenshot again.
 
-## Step 3: Write brand/DESIGN.md
+## Step 3: Write DESIGN.md
 
 Start from [templates/DESIGN.md](templates/DESIGN.md). It must include the "never"
 rules (for example "never use the accent for body text", "never more than one

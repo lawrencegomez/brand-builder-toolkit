@@ -12,7 +12,7 @@ Live site: <url or "not launched yet">
 - [ ] 2 Inspiration (brand/INSPIRATION.md)
 - [ ] 3 Platform (brand/PLATFORM.md)
 - [ ] 4 Typography
-- [ ] 5 Design system (brand/DESIGN.md, styles/tokens.css, design-system.html)
+- [ ] 5 Design system (DESIGN.md, styles/tokens.css, design-system.html)
 - [ ] 6 Structure + copy (brand/COPY.md)
 - [ ] 7 Visual assets (assets/)
 - [ ] 8 Mockups + build

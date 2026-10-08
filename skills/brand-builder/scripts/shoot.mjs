@@ -32,6 +32,27 @@ try {
 }
 
 mkdirSync(outDir, { recursive: true });
+
+// Busy sites (analytics, chat widgets, bot checks) never go network-idle, so wait for
+// "load", then give fonts and animations a moment. A slow site still gets captured.
+async function open(page) {
+  try {
+    await page.goto(url, { waitUntil: "load", timeout: 45000 });
+  } catch (err) {
+    console.error(`Warning: ${err.message.split("\n")[0]} (capturing what loaded)`);
+  }
+  await page.waitForTimeout(1500);
+  // Dismiss cookie banners so they do not cover the design.
+  const consent = page.getByRole("button", { name: /^(accept( all)?( cookies)?|agree|i agree|allow all|got it|required only|reject all|ok)$/i });
+  if (await consent.first().isVisible().catch(() => false)) {
+    await consent.first().click().catch(() => {});
+    await page.waitForTimeout(500);
+  }
+  const title = await page.title().catch(() => "");
+  if (/just a moment|access denied|attention required|are you a robot/i.test(title)) {
+    console.error(`Warning: "${title}" looks like a bot check, not the real page.`);
+  }
+}
 const sizes = { desktop: { width: 1440, height: 900 }, mobile: { width: 390, height: 844 } };
 const browser = await chromium.launch();
 const written = [];
@@ -39,7 +60,16 @@ const written = [];
 for (const [label, viewport] of Object.entries(sizes)) {
   // Full page, motion off: every section rendered in its final state.
   const still = await browser.newPage({ viewport, reducedMotion: "reduce", isMobile: label === "mobile" });
-  await still.goto(url, { waitUntil: "networkidle" });
+  await open(still);
+  // Scroll through once so on-entry reveals fire, then return to the top.
+  await still.evaluate(async () => {
+    for (let y = 0; y < document.documentElement.scrollHeight; y += innerHeight * 0.5) {
+      scrollTo(0, y);
+      await new Promise((r) => setTimeout(r, 60));
+    }
+    scrollTo(0, 0);
+  });
+  await still.waitForTimeout(400);
   const full = join(outDir, `${name}-${label}-full.png`);
   await still.screenshot({ path: full, fullPage: true });
   written.push(full);
@@ -47,7 +77,7 @@ for (const [label, viewport] of Object.entries(sizes)) {
 
   // Viewport at five scroll positions, motion on.
   const live = await browser.newPage({ viewport, isMobile: label === "mobile" });
-  await live.goto(url, { waitUntil: "networkidle" });
+  await open(live);
   const max = await live.evaluate(() => document.documentElement.scrollHeight - innerHeight);
   for (let i = 0; i <= 4; i++) {
     await live.evaluate((y) => window.scrollTo(0, y), Math.round((max * i) / 4));

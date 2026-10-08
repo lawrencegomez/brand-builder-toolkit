@@ -37,9 +37,11 @@ For each URL:
    installed Chrome):
 
    ```bash
-   npx --yes designlang <url> --full
+   npx --yes designlang <url>
    ```
 
+   A plain run takes seconds. Add `--full` (screenshots, breakpoints, interactions)
+   only when you need it, and tell the person first: it can take 5+ minutes per site.
    It writes to `./design-extract-output/`. Move that folder to
    `brand/references/<domain>/` so runs do not overwrite each other. Read the
    `*-design-language.md`, `*-design-tokens.json`, `*-motion-tokens.json`, and
@@ -47,8 +49,14 @@ For each URL:
 3. If two references each have something they love ("this one's type, that one's
    colors"), try `npx --yes designlang pair <url-a> <url-b>` to see a fused system.
 
-If extraction fails (some sites block it), work from screenshots and the page's CSS
-instead and say so.
+**Check the extraction is real.** Some sites (Aesop, for example) answer automated
+tools with a bot check, and designlang still reports success. Open the
+`*-design-language.md`: if its title is "Just a moment...", "Access denied" or similar,
+or it analyzed fewer than ~200 elements, the data describes the bot page. Treat it as
+failed. The toolkit's screenshot script also warns when it lands on a bot check.
+
+If a site blocks tools or will not load, tell the person in one line and suggest a
+similar reference instead, or work from screenshots they take themselves.
 
 ## Step 3: Explain it like a teacher
 

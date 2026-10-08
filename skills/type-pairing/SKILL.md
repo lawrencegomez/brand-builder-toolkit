@@ -36,8 +36,10 @@ Name each pairing with a feeling, for example: "Editorial Warm: Gambetta + Satos
 
 ## Step 2: Render specimens
 
-Create `brand/type-specimens.html` showing the 3 pairings side by side (stacked on
-mobile), each using the brand's real words from BRAND.md:
+Show the 3 pairings side by side, each using the brand's real words from BRAND.md.
+Use Paper if it is connected (a "Typography" page, one artboard per pairing);
+otherwise create `brand/type-specimens.html` (stacked on mobile). One or the other,
+not both. Each specimen shows:
 
 - the actual headline idea at hero size
 - a subheading
@@ -45,8 +47,12 @@ mobile), each using the brand's real words from BRAND.md:
 - a button and a small caption
 - the pairing's name and font sources
 
-If Paper is connected, also put the specimens on a "Typography" artboard in the
-project's Paper file (call `get_font_family_info` before styling text in Paper).
+**Paper only has Google Fonts and fonts installed on this computer.** Call
+`get_font_family_info` for every candidate before using it. If a Fontshare or Open
+Foundry font is unavailable, either install it first (download the font files, then
+double-click to install on Mac, or right-click > Install on Windows) or pick a Google
+Fonts alternative with the same feel. Changing the font of a duplicated text layer
+in Paper sometimes does not apply; rewrite that text with `write_html` instead.
 
 Serve and screenshot it, look at it, then share the local link and screenshot. Ask
 which one feels most like them. Mixing is allowed ("A's headline font with B's body").
@@ -63,7 +69,7 @@ For the chosen pairing, define:
 - **Line length**: body text 45 to 75 characters wide (`max-width: 65ch`).
 - **Weights**: at most 3 in use.
 
-Write the choice and scale to the Typography section of `brand/DESIGN.md` (create the
+Write the choice and scale to the Typography section of `DESIGN.md` (create the
 file if Phase 5 has not started) and log it in `brand/DECISIONS.md`.
 
 ## Typography rules for everything after this phase

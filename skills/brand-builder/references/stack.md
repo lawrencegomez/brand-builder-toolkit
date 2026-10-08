@@ -42,8 +42,9 @@ npx skills add coreyhaines31/marketingskills --skill copywriting copy-editing si
 # Makes writing sound human
 npx skills add blader/humanizer -g AGENTS -y
 
-# Scroll-driven, cinematic, 3D-feeling sites (Nate Herk)
-npx skills add nateherkai/scroll-craft -g AGENTS -y
+# Scroll-driven, cinematic, 3D-feeling sites (Nate Herk). --copy matters: its
+# helper scripts silently do nothing when installed as a symlink.
+npx skills add nateherkai/scroll-craft -g AGENTS --copy -y
 
 # Design critique and refinement (impeccable has its own installer)
 npx impeccable install --providers=claude,codex --scope=global
@@ -87,7 +88,9 @@ Setup:
      Paper's MCP panel)
    - Claude Desktop chat: download the extension from https://claude-mcpb.paper.design
      and install it under Settings, Extensions.
-3. Restart the agent, then confirm the connection by listing Paper files.
+3. Restart the agent, then confirm the connection by listing Paper files. New files
+   the agent creates land at the top level of the team; move them into a folder by
+   hand if you organize with folders.
 4. Before your first Paper edit in a session, load Paper's own guide
    (`get_guide` with topic `paper-mcp-instructions`) and follow it.
 

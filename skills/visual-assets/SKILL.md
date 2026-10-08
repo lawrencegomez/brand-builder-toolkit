@@ -10,7 +10,7 @@ when nothing free can do the job.
 
 ## Step 1: Make an asset list
 
-Read `brand/COPY.md` (sections) and `brand/DESIGN.md`. List every visual slot: logo,
+Read `brand/COPY.md` (sections) and `DESIGN.md`. List every visual slot: logo,
 favicon, hero, section images, icons, backgrounds, social share image (1200x630), and
 any video or animation. For each, note what it must communicate.
 
@@ -22,6 +22,13 @@ any video or animation. For each, note what it must communicate.
 2. **Code-drawn graphics**: SVG shapes, patterns, gradients, illustrations, and
    icon-style graphics made directly in code from the design tokens. Free, sharp at any
    size, perfectly on-brand. Good for backgrounds, dividers, diagrams, simple icons.
+   **Simple products can be real 3D in code** (Three.js): a jar, bottle, can, box, or
+   candle built from a few shapes, lit, and turned by scroll. Free, and it can do things
+   a photo cannot (change color, fill, rotate). Two gotchas: a see-through glass made
+   with `transmission` hides anything see-through inside it (use a thin transparent
+   shell for the glass), and test colors with `NeutralToneMapping`. When the scene
+   reads scroll progress, guard every division (`Math.max(1, travel)`): under reduced
+   motion pinned sections collapse, the travel becomes 0, and one NaN breaks the scene.
 3. **Icon sets**: Flaticon (https://www.flaticon.com) for icons in many styles; free
    icons need visible credit to the author. One icon style per site.
 4. **Motion in the page itself**: CSS and small JS animations (Emil's motion skills:
@@ -45,9 +52,14 @@ Present the plan as a short table (slot, tool, why, cost) and get a yes.
 
 ## Step 3: Logo (if they do not have one)
 
-Use the `brandkit` skill to explore 3 logo directions tied to BRAND.md. Deliver an SVG
+Use the strategy method in the `brandkit` skill (category, metaphor, "monogram +
+meaning", one idea per mark) to pick 3 logo directions tied to BRAND.md. Note that
+`brandkit` itself produces a brand-board *image* with an image generator, not usable
+logo files: use it for a concept board only if an image tool is available and the
+person agrees to any cost. Draw the actual logo as SVG in code (or in Paper): an SVG
 master, a one-color version, a favicon (32px and 180px), and dark and light versions.
-If Paper is connected, put the directions on the Paper "Decisions" page.
+Preview them at full size and at 16px. If Paper is connected, put the directions on the
+Paper "Decisions" page.
 
 ## Step 4: Create and file the assets
 

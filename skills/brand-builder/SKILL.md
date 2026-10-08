@@ -44,12 +44,14 @@ Everything lives in one folder the person chose (for example `~/Sites/my-brand`)
 
 ```
 my-brand/
+  DESIGN.md          the design system in words (root, where design tools look for it)
+  PRODUCT.md         short product summary pointing to brand/BRAND.md (read by impeccable)
+  .agents/product-marketing.md   pointer to brand/BRAND.md (read by Corey Haines' skills)
   brand/
     PROGRESS.md      where we are, settled decisions, next step
     BRAND.md         who, what, why, audience, voice
     INSPIRATION.md   reference sites and what we are taking from each
     PLATFORM.md      where the site will live and why
-    DESIGN.md        the design system in words (tokens, type, components, rules)
     COPY.md          sitemap + every word on the site
     DECISIONS.md     dated log of every look/feel choice and why
   styles/tokens.css  the design system in code (single source of truth)
@@ -68,7 +70,7 @@ Start `brand/PROGRESS.md` from [references/progress-template.md](references/prog
 | 1 | Discovery | `brand-discovery` | `brand/BRAND.md` |
 | 2 | Inspiration | `reference-analysis` (+ `awesome-design-lookup` as a shortcut) | `brand/INSPIRATION.md` |
 | 3 | Platform | `platform-strategy` | `brand/PLATFORM.md` |
-| 4 | Typography | `type-pairing` | type choice in `brand/DESIGN.md` |
+| 4 | Typography | `type-pairing` | type choice in `DESIGN.md` |
 | 5 | Design system | `design-system` | `DESIGN.md`, `tokens.css`, `design-system.html`, Paper board |
 | 6 | Structure + copy | `site-copy` | `brand/COPY.md` |
 | 7 | Visual assets | `visual-assets` | `assets/` |
@@ -102,7 +104,7 @@ the phase yourself.
 
 ### Phase 8: Mockups + build
 
-1. Read `brand/BRAND.md`, `brand/INSPIRATION.md`, `brand/DESIGN.md`, `brand/COPY.md`.
+1. Read `brand/BRAND.md`, `brand/INSPIRATION.md`, `DESIGN.md`, `brand/COPY.md`.
 2. **Pick the build lane** and say which in one line:
    - **Classic site** (default): `taste-skill` for layout and house style, plus Emil's
      motion skills (`emil-design-eng`, `find-animation-opportunities`) for tasteful
@@ -112,7 +114,19 @@ the phase yourself.
      whenever the person says animated, immersive, cinematic, 3D, "like an Apple page",
      or the brand is a product or experience that benefits from a story told by
      scrolling. Its own-photos route is free; generated footage costs money, so get a
-     yes and a budget first. Run its `doctor` script before building.
+     yes and a budget first. How to run it inside this toolkit:
+     - Run its `doctor` script first. If its helper scripts print nothing, it was
+       installed as a symlink; reinstall with `--copy` (see stack.md).
+     - Hand it the brand files instead of re-interviewing: its BRIEF.md can reuse
+       BRAND.md, INSPIRATION.md, and COPY.md, and ask only what they do not answer.
+     - Its "directions" are page grammars: pitch 2 or 3 grammars as the mockup step
+       (a key frame each, in Paper if connected) instead of generic page mockups.
+     - Build the page at the project root (`index.html`), map its `--sc-*` tokens to
+       `styles/tokens.css`, and keep its BRIEF and FINGERPRINTS in `scrollcraft/`.
+     - Check it with reduced motion on before calling it done: the engine keeps pinned
+       acts at full height, so collapse them (`[data-sc-act]{height:auto !important}`)
+       and lay a sideways rail out as a plain list. Also write each pinned act's height
+       into the HTML so the page does not jump while loading (see go-live).
 3. **Mockups first.** Make 2 or 3 genuinely different directions of the home page hero
    and one inner section, all built from `styles/tokens.css`. Put them in Paper on the
    "Mockups" page if Paper is connected, otherwise as local HTML files they can open

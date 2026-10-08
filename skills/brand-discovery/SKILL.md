@@ -84,5 +84,13 @@ Budget for paid tools: / Deadline: / Who updates the site:
 ## Open questions
 ```
 
+Also write two short pointer files so other skills find the brand without re-asking:
+- `PRODUCT.md` at the project root: the one-sentence description, the customer, the
+  website's primary action, the personality and voice lines, then "Full brand:
+  brand/BRAND.md". (impeccable reads this file.)
+- `.agents/product-marketing.md`: "This project's brand and positioning live in
+  brand/BRAND.md. Do not ask again for anything it answers." (Corey Haines' marketing
+  skills read this file.)
+
 Then update `brand/PROGRESS.md`, show the Phase 1 card from the brand-builder lessons,
 and recommend Phase 2 (`reference-analysis`).

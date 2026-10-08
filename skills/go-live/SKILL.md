@@ -10,6 +10,10 @@ description: Final pre-launch checklist and go-live for a brand site - SEO basic
 Go page by page. If installed, use `seo-audit` and `ai-seo` (Corey Haines) for depth
 and `cro` for conversion; this list is the minimum.
 
+Ask for the domain first: canonical URLs, the share image, and the sitemap all need the
+full address. If they have not picked one yet, use a stand-in and list it as a
+placeholder to replace in Step 3.
+
 **Found by search engines and AI assistants**
 - Unique `<title>` (under 60 characters) and meta description (under 155) per page,
   matching `brand/COPY.md`
@@ -32,6 +36,10 @@ and `cro` for conversion; this list is the minimum.
 - Images sized and compressed (WebP/AVIF), lazy-loaded below the fold
 - Only the font weights in use; `font-display: swap`
 - If the agent has Lighthouse or browser devtools, run it on mobile and fix the top issues
+  (`npx --yes lighthouse@12 <url> --chrome-flags="--headless=new"` works anywhere)
+- Scroll-craft pages: write each pinned act's height into the HTML
+  (`style="height:220vh"` for `data-sc-span="2.2"`) so the page does not jump while
+  the engine loads. In the dry run this alone took mobile performance from 35 to 97.
 
 **Converts**
 - The primary action from BRAND.md is visible without scrolling, on mobile too
@@ -46,17 +54,27 @@ Show a short pass/fail report, fix the failures, and screenshot the result.
 ## Step 2: Go live
 
 **Custom code (from `brand/PLATFORM.md`)**. Recommend a host and say why:
-- **Netlify** or **Cloudflare Pages**: free tiers that allow business sites. Easiest
-  for plain HTML/Astro.
+- **Netlify** or **Cloudflare Pages**: free tiers that are generally fine for small
+  business sites (check the current terms before relying on it). Easiest for plain
+  HTML/Astro.
 - **Vercel**: excellent, but the free Hobby plan is for personal, non-commercial use;
   business sites should use Pro.
 
-Deploy from the project folder (each opens a browser login the first time):
+Never deploy the project folder itself: it holds `node_modules`, `brand/`, and
+screenshots that should not go public. For plain HTML, add a build script that copies
+only the public files into `dist/` (Astro already builds to `dist/`):
 
 ```bash
-npx --yes netlify-cli deploy --prod --dir .          # Netlify (use the build folder for Astro, e.g. dist)
-npx --yes wrangler pages deploy . --project-name <name>   # Cloudflare Pages
-npx --yes vercel --prod                              # Vercel
+# package.json "build": "rm -rf dist && mkdir dist && cp -R index.html styles js assets robots.txt sitemap.xml dist/"
+npm run build
+```
+
+Then deploy `dist` (each opens a browser login the first time):
+
+```bash
+npx --yes netlify-cli deploy --prod --dir dist                # Netlify
+npx --yes wrangler pages deploy dist --project-name <name>    # Cloudflare Pages
+cd dist && npx --yes vercel --prod                            # Vercel
 ```
 
 Also suggest putting the project on GitHub (private repo) as a backup and so future

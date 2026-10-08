@@ -15,8 +15,10 @@ to see what you see.
    `node <brand-builder skill folder>/scripts/shoot.mjs <url> shots <page>-round<N>`, run from the project folder (setup in
    `../brand-builder/references/stack.md`). It captures desktop and mobile, full page
    and at five scroll positions. Look at every image yourself.
-2. **Critique.** If `impeccable` is installed, run `impeccable critique` (or `audit`)
-   on the page. Otherwise use the `redesign-skill` audit. Check against:
+2. **Critique.** If `impeccable` is installed, run `impeccable critique` for the first
+   round (thorough: two independent reviewers, scores, priorities; it reads `PRODUCT.md`
+   and `DESIGN.md` at the project root) and `impeccable polish` or `audit` for later
+   rounds. Otherwise use the `redesign-skill` audit. Check against:
    - **Brand**: does it feel like the BRAND.md personality words? Would a stranger
      guess what the business is in 5 seconds?
    - **Hierarchy**: one clear focal point per section; the primary action obvious.
@@ -32,7 +34,9 @@ to see what you see.
    each in one plain sentence ("The headline and the button compete; making the button
    the only accent color fixes that").
 4. **Fix.** Make the changes using tokens. If a fix needs a new token or component,
-   update the design system first (Paper, then `tokens.css`, then `brand/DESIGN.md`).
+   update the design system first (Paper, then `tokens.css`, then `DESIGN.md`). If a
+   fix changes how an existing component looks (a button style, a rule weight), update
+   that component on the Paper board in the same round so Paper never falls behind.
 5. **Re-capture and compare.** New screenshots, shown next to the previous round's,
    with what changed.
 

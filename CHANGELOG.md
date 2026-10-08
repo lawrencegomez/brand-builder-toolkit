@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-10-08: fixes from a full end-to-end dry run
+
+A complete run as a made-up brand (Oso Goloso Honey: discovery to launch checklist to a
+first evolve change) turned up these fixes:
+
+- Screenshot script no longer crashes on busy sites, dismisses cookie banners, flags
+  bot-check pages, and scrolls through before full-page shots so reveals show up.
+- `DESIGN.md` now lives at the project root and discovery writes `PRODUCT.md` and
+  `.agents/product-marketing.md`, so impeccable and Corey Haines' skills find them.
+- Reference analysis runs plain `designlang` first (seconds, not minutes) and checks for
+  bot-wall pages that look like success.
+- Type pairing: with Paper, use Google Fonts (Paper cannot load Fontshare).
+- Design system: the template's token names are the contract; brandkit is for strategy,
+  logos are drawn as SVG.
+- Scroll-craft: install with `--copy` (its scripts fail silently through a symlink),
+  build at the project root, collapse pinned acts under reduced motion, and write pinned
+  heights into the HTML (mobile Lighthouse performance went from 35 to 97).
+- 3D in code: notes on transmission glass, tone mapping, and divide-by-zero under
+  reduced motion.
+- Go-live: ask for the domain first, deploy a `dist/` folder (never the project root),
+  softer wording on free-tier terms.
+- Evolve and design loop: color changes also hunt the old hex in SVGs, and component
+  fixes go back to Paper in the same round.
+
 ## 2026-10-08: v2 refresh
 
 - One paste to start: README prompt + `AGENTS.md` tell Claude Code, Codex, or Antigravity

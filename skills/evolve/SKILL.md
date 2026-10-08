@@ -10,7 +10,7 @@ the design system, so the site still feels designed after fifty edits.
 
 ## Always start here
 
-1. Read `brand/PROGRESS.md`, `brand/BRAND.md`, `brand/DESIGN.md`,
+1. Read `brand/PROGRESS.md`, `brand/BRAND.md`, `DESIGN.md`,
    `styles/tokens.css`, and the last entries of `brand/DECISIONS.md`.
 2. If Paper is connected, open the project's Paper file and check the Design System
    page matches `tokens.css`. If they disagree, tell the person and ask which is right
@@ -34,7 +34,9 @@ the design system, so the site still feels designed after fifty edits.
    ideally as before and after side by side. Flag it if it contradicts an earlier
    decision in `brand/DECISIONS.md`.
 2. On a yes: update `styles/tokens.css` (one change reaches every page), then
-   `brand/DESIGN.md`.
+   `DESIGN.md`. Colors also live in files tokens cannot reach: search `assets/` and
+   any JS for the old hex (logo SVGs, favicon, canvas drawing) and update those too,
+   then regenerate PNG icons made from them.
 3. Screenshot every page at desktop and mobile; fix anything the change broke.
 4. Deploy, re-check the live site, and confirm Paper, tokens, and live site agree.
 
