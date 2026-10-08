@@ -74,7 +74,7 @@ Start `brand/PROGRESS.md` from [references/progress-template.md](references/prog
 | 7 | Visual assets | `visual-assets` | `assets/` |
 | 8 | Mockups + build | this skill (below) | the site |
 | 9 | Design loop | `design-loop` | before/after screenshots, fixes |
-| 10 | Launch | `launch` | audited, live site |
+| 10 | Launch | `go-live` | audited, live site |
 | 11 | Keep improving | `evolve` | new pages and changes that stay on-brand |
 
 If a skill named above is not installed, say so in one line, offer to install it (see

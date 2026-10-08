@@ -1,6 +1,6 @@
 ---
-name: launch
-description: Final pre-launch checklist and go-live for a brand site - SEO basics, social share previews, accessibility, speed, copy and conversion check - then deploys a custom site (Netlify, Cloudflare Pages, or Vercel) and connects a domain, or hands off a build guide for Squarespace/Shopify/Framer/Webflow/Wix. Use for Phase 10 of the brand builder, or when someone says "launch", "go live", "publish my site", "deploy", "SEO check", "connect my domain", or "is my site ready".
+name: go-live
+description: Final pre-launch checklist and go-live for a brand site - SEO basics, social share previews, accessibility, speed, copy and conversion check - then deploys a custom site (Netlify, Cloudflare Pages, or Vercel) and connects a domain, or hands off a build guide for Squarespace/Shopify/Framer/Webflow/Wix. Use for Phase 10 of the brand builder, or when someone says "launch my site", "go live", "publish my site", "deploy", "SEO check", "connect my domain", or "is my site ready".
 ---
 
 # Launch

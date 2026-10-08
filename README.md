@@ -132,7 +132,7 @@ and Flaticon, are listed in [resources.md](skills/brand-builder/references/resou
 | `site-copy` | 6 |
 | `visual-assets` | 7 |
 | `design-loop` | 9 |
-| `launch` | 10 |
+| `go-live` | 10 |
 | `evolve` | 11 |
 | `update-toolkit` | Keeps everything current |
 

@@ -13,7 +13,7 @@
   mockups, with templates), `site-copy`, `visual-assets` (free tools first, Higgsfield
   only when needed, Remotion for code video), `design-loop`, `evolve`, `update-toolkit`.
 - Renamed: `zero-to-one-builder` to `brand-builder`, `design-extractor` to
-  `reference-analysis`, `marketing-seo-audit` to `launch` (now also deploys).
+  `reference-analysis`, `marketing-seo-audit` to `go-live` (now also deploys; not `launch`, which is Corey Haines' launch-strategy skill).
 - Removed: `gstack-superpowers` (folded into the build phase and the vibe coding guide).
 - Discovery now uses Matt Pocock's grill-me rounds.
 - Scroll-driven and 3D sites use Nate Herk's scroll-craft.

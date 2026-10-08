@@ -26,7 +26,7 @@ the design system, so the site still feels designed after fifty edits.
    tokens and components. If something new is truly needed, add it to the design
    system first.
 4. Build it, link it from the nav/footer if appropriate, add SEO fields.
-5. Run one round of the `design-loop`, then the relevant parts of the `launch`
+5. Run one round of the `design-loop`, then the relevant parts of the `go-live`
    checklist, then deploy.
 
 **Change the look (colors, type, buttons, spacing, motion)**
