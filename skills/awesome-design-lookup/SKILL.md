@@ -1,18 +1,22 @@
 ---
 name: awesome-design-lookup
-description: Fetches a pre-made DESIGN.md file from the awesome-design-md repository for renowned brands (e.g., Stripe, Vercel, Apple) to use as a starting point.
+description: Fetches a ready-made DESIGN.md describing a well-known brand's design language (Stripe, Linear, Apple, Notion, Airbnb and ~70 more) from the awesome-design-md repo, to use as a starting point to remix. Use when someone says "make it feel like <brand>", "Stripe-style", "Linear vibe", or wants a shortcut in Phase 2 of the brand builder.
 ---
 
 # Awesome Design Lookup
 
-When the user requests a design inspired by a well-known company or wants to use a pre-existing design template, trigger this skill.
+A shortcut for Phase 2: start from a documented design language instead of extracting
+one. The result is raw material to remix with the person's own brand, never a copy.
 
-## Instructions for Agent:
-
-1. The user will specify a brand (e.g., "I want a Vercel-like design").
-2. Check the local `awesome-design-md` repository (typically located at `~/awesome-design-md` or `~/Documents/awesome-design-md`) or fallback to fetching from the remote GitHub repository: `https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/[brand]/DESIGN.md`.
-3. Read the content of the target `DESIGN.md`.
-4. Copy the content into a new `DESIGN.md` file in the user's current project root.
-5. Notify the user: "I have successfully imported the design system for [Brand]. You can review the DESIGN.md file. Shall we proceed to build the UI?"
-
-*Note: Make sure to check the URL correctly, matching the folder names in the awesome-design-md repo (e.g., `vercel`, `stripe`, `apple`, `linear.app`).*
+1. List what exists (about 70 brands, folder names like `stripe`, `linear.app`,
+   `apple`, `notion`, `airbnb`):
+   `https://api.github.com/repos/VoltAgent/awesome-design-md/contents/design-md`
+   Match the person's brand name to the closest folder. If there is no match, say so
+   and use the `reference-analysis` skill on the live site instead.
+2. Fetch `https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/<folder>/DESIGN.md`.
+3. Save it as `brand/references/<folder>-DESIGN.md` (not as the project's own
+   DESIGN.md; that gets built in Phase 5 from the person's brand).
+4. Summarize in plain English what makes that design language work (type, color,
+   spacing, motion, voice), using the same breakdown format as `reference-analysis`,
+   and add it to `brand/INSPIRATION.md` with a "Borrow" and a "Skip" list.
+5. Remind them: we take ingredients, and their logo, colors, and voice stay their own.

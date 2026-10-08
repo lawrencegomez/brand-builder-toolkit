@@ -1,76 +1,158 @@
 # Brand Builder Toolkit
 
-This toolkit is an Antigravity plugin and workflow system designed to help non-technical founders go from a blank slate to a fully branded, pixel-perfect, and hosted website in under an hour.
+A set of skills for Claude Code, Codex, and Antigravity that walks you from an idea to a
+live website with a real brand and a design system you can keep building on. You answer
+questions and make choices. The AI does the building and explains what it is doing, so
+by the end you know how to do it again.
 
-It combines customized workflows (GStack `/office-hours`, `taste-skill`, `designlang` extraction, and specialized marketing audits) into a single guided process.
+It pulls together the skills, tools, and habits I picked up building my own products.
 
-## Prerequisites & Installation
+## Start here
 
-To install this toolkit on a fresh machine (for use with Claude Code), simply copy and paste these four terminal commands:
+1. Open a local AI coding app. Any of these works on Mac or Windows:
+   - [Claude Code](https://code.claude.com) in a terminal, in VS Code, or in the Code tab of [Claude Desktop](https://claude.com/download)
+   - [Codex](https://chatgpt.com/codex), the CLI or the desktop app
+   - [Antigravity](https://antigravity.google)
 
-**1. Install GStack:** 
-```bash
-git clone https://github.com/garrytan/gstack.git ~/.gstack
+   Use the app rather than the chat website. The app can create files, run your site,
+   and take screenshots of it.
+2. Paste this in:
+
+```text
+Set me up with the Brand Builder Toolkit: https://github.com/lawrencegomez/brand-builder-toolkit
+Read its AGENTS.md, install everything it needs for this app on my computer, then start the brand builder with me.
 ```
 
-**2. Install the Taste Skill Bundle:**
-```bash
-git clone https://github.com/Leonxlnx/taste-skill.git ~/.claude/skills/taste-skill
+The agent checks your computer, installs what is missing, asks where your project
+should live, and starts asking you questions. If you stop partway through, open a new
+chat later and say "continue my brand builder project".
+
+## What you'll learn
+
+🎨 Create websites using design systems, not simple prompts
+🔎 Analyze reference websites for better design direction
+🤖 Use Claude/Codex to generate custom website structures
+🖼️ Generate unique graphics and videos with Higgsfield
+🔁 Apply the design loop for iterative improvements
+🔤 Improve websites through stronger typography choices
+✍️ Refine website copy using AI copy frameworks
+📐 Build reusable design systems for future pages
+
+Each step ends with a short "what you just learned" note and a sentence you can use to
+ask for the same thing on your next project.
+
+## The steps
+
+| # | Step | What you do | What you get |
+|---|---|---|---|
+| 0 | Setup | Say yes a few times | Tools installed, a project folder |
+| 1 | Discovery | Answer rounds of questions, each with a suggested answer you can accept | `BRAND.md`: who it's for, why you exist, how you sound |
+| 2 | Inspiration | Browse a few galleries and paste links you like | A plain-English breakdown of why each site works and what to borrow |
+| 3 | Platform | Talk through who will edit the site and what it sells | A decision: custom site, Squarespace, Shopify, Framer, and so on |
+| 4 | Typography | Pick from three font pairings shown with your own words | A type scale the whole site follows |
+| 5 | Design system | React to a live board of colors, type, and buttons | `tokens.css`, a design system page, and a board in Paper |
+| 6 | Structure and copy | Approve a sitemap, then the words | Every page's copy, written with named frameworks and cleaned of AI tells |
+| 7 | Visual assets | Share photos, approve a plan | Logo, images, icons, and video, made with the cheapest tool that works |
+| 8 | Build | Choose between two or three directions | Your site, running on your computer |
+| 9 | Design loop | Look at before and after screenshots | A noticeably better page after two or three rounds |
+| 10 | Launch | Approve the checklist and connect a domain | A live site |
+| 11 | Keep improving | Ask for new pages or changes | Changes that stay on-brand |
+
+For scroll-driven, cinematic, or 3D-feeling sites, step 8 uses
+[scroll-craft](https://github.com/nateherkai/scroll-craft) by Nate Herk.
+
+## What it costs
+
+You need an account with Claude, ChatGPT (for Codex), or Google (for Antigravity), and a
+paid plan makes a full build much smoother. You also need
+[Node.js](https://nodejs.org) and [git](https://git-scm.com), which the agent will help
+you install. Everything in the toolkit is free. Two paid extras are optional:
+
+- [Paper](https://paper.design) is a design canvas, similar to Figma, that the AI can read
+  and edit. It is where your design system and mockups live, and it keeps everything
+  organized. The free plan allows about 100 AI actions a week, which a full build uses
+  up quickly. Pro is about $16 a month on a yearly plan. Without Paper, the toolkit uses
+  Claude artifacts or a local design system page instead.
+- [Higgsfield](https://higgsfield.ai) generates photoreal images and video. The toolkit
+  suggests it only when your own photos and code-made graphics or video (Remotion) can't
+  do the job, and it agrees a budget with you before generating anything.
+
+## Keeping it current
+
+The toolkit and the skills it uses get updated often. Once a month, tell your agent:
+
+```text
+Update the brand builder toolkit and all its skills.
 ```
 
-**3. Download the Brand Builder Toolkit:**
+Or run it yourself in a terminal:
+
 ```bash
-git clone https://github.com/lawrencegomez/brand-builder-toolkit.git ~/brand-builder-toolkit
+npx skills update -g -y
+npx impeccable update
 ```
 
-**4. Link the Brand Builder Skills to Claude Code:**
+Claude Code users who installed it as a plugin can also run `/plugin marketplace update`
+and turn on auto-update in `/plugin` under the Marketplaces tab.
+
+## Installing by hand
+
+The agent does this for you, but if you prefer to do it yourself, the full list of
+commands (with the flags for Claude Code, Codex, and Antigravity) is in
+[stack.md](skills/brand-builder/references/stack.md). The short version for this
+toolkit alone:
+
 ```bash
-ln -sf ~/brand-builder-toolkit/skills/* ~/.claude/skills/
+npx skills add lawrencegomez/brand-builder-toolkit --skill '*' -g -a claude-code -a codex -y
 ```
 
-*Note: You can then open a completely fresh, empty directory where you want your new website code to live and start Claude Code.*
+Claude Code also works as a plugin:
 
-## Workflow: The Zero-To-One Builder
+```text
+/plugin marketplace add lawrencegomez/brand-builder-toolkit
+/plugin install brand-builder-toolkit@brand-builder-toolkit
+```
 
-Once installed, you can trigger the master AI orchestrator by asking your AI coding assistant:
+## Resources
 
-> **"Run the zero to one builder for my new business."**
+Galleries, font libraries, icon sets, and color tools the toolkit points you to along
+the way, including Refero Styles, Fonts In Use, Fontshare, Google Fonts, Open Foundry,
+and Flaticon, are listed in [resources.md](skills/brand-builder/references/resources.md).
 
-The agent will seamlessly guide you through the following phases:
+## What's inside
 
-### 1. Branding & Competitor Analysis
-- **Goal:** Define what your company is, who it serves, and what tone it uses.
-- **Skills Used:** GStack `/office-hours` and `/browse`.
-- **Expected Outcome:** The agent will ask you guided questions and output a foundational `BRAND_GUIDELINES.md` document.
+| Skill | Step |
+|---|---|
+| `brand-builder` | Runs the whole process and remembers where you left off |
+| `brand-discovery` | 1 |
+| `reference-analysis`, `awesome-design-lookup` | 2 |
+| `platform-strategy` | 3 |
+| `type-pairing` | 4 |
+| `design-system` | 5 |
+| `site-copy` | 6 |
+| `visual-assets` | 7 |
+| `design-loop` | 9 |
+| `launch` | 10 |
+| `evolve` | 11 |
+| `update-toolkit` | Keeps everything current |
 
-### 2. Platform Strategy
-- **Goal:** Evaluate your business functionality (e-commerce, subscriptions, complex logic) to pick the right hosting platform.
-- **Skills Used:** `platform-strategy`.
-- **Expected Outcome:** The agent presents pros, cons, and pricing for Shopify, Squarespace, and Custom Builds, waiting for you to pick the right architecture in `PLATFORM_DECISION.md`.
+It also installs and leans on work by other people:
+[taste-skill](https://github.com/Leonxlnx/taste-skill) (Leonxlnx),
+[impeccable](https://github.com/pbakaus/impeccable) (Paul Bakaus),
+[Emil Kowalski's skills](https://github.com/emilkowalski/skills),
+[grill-me](https://github.com/mattpocock/skills) (Matt Pocock),
+[marketing skills](https://github.com/coreyhaines31/marketingskills) (Corey Haines),
+[humanizer](https://github.com/blader/humanizer) (blader),
+[scroll-craft](https://github.com/nateherkai/scroll-craft) (Nate Herk),
+[Remotion skills](https://github.com/remotion-dev/skills),
+[designlang](https://github.com/Manavarya09/design-extract), and
+[awesome-design-md](https://github.com/VoltAgent/awesome-design-md).
 
-### 3. Design Extraction
-- **Goal:** Capture the visual identity of websites you admire.
-- **Tools Used:** The `design-extractor` skill running the `npx designlang` CLI tool.
-- **Expected Outcome:** The agent will ask for inspiration URLs, extract their exact CSS tokens, and create a fresh, custom `DESIGN.md` tailored specifically for your project from scratch.
+## Working well with AI
 
-### 4. Mockup Generation
-- **Goal:** Visually preview how your brand looks before building the actual codebase.
-- **Skills Used:** The `taste-skill` (with `/design-shotgun` as a backup).
-- **Expected Outcome:** The AI will combine your brand guidelines and extracted design tokens to generate multiple pixel-perfect mockups for you to choose from.
+[VIBE_CODING_GUIDELINES.md](VIBE_CODING_GUIDELINES.md) has a few habits that make any AI
+coding session go better, including when to start a fresh chat.
 
-### 5. Execution (Forked)
-- **Goal:** Turn the selected mockup into production-ready code, OR stop and prep assets for a CMS.
-- **Skills Used:** GStack `/ship` (if Custom Build).
-- **Expected Outcome:** If you chose a Custom Build, the AI builds out the modular React/Next.js components. If you chose Shopify/Squarespace, the AI stops coding and finalizes your visual assets and copy deck so you can build it in the CMS.
+## License
 
-### 6. QA & SEO Audit
-- **Goal:** Ensure the site converts and meets modern web standards.
-- **Skills Used:** `marketing-seo-audit`.
-- **Expected Outcome:** A final pass over the code (or CMS copy deck) to optimize CTA logic, rewrite any "fluff" copy, and ensure semantic HTML and WCAG accessibility standards.
-
-## Bonus: Vibe Coding Guidelines
-
-If you want to maximize your velocity and minimize LLM coding mistakes, check out the [Vibe Coding Guardrails (Karpathy-Inspired)](./VIBE_CODING_GUIDELINES.md) included in this repository. These behavioral guidelines will fundamentally improve how you steer AI agents.
-
----
-Enjoy building premium web applications effortlessly!
+MIT. See [LICENSE](LICENSE).

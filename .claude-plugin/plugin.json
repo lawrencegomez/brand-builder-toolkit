@@ -1,0 +1,18 @@
+{
+  "name": "brand-builder-toolkit",
+  "description": "From idea to a live, on-brand website: discovery, references, typography, design system (Paper), copy, assets, build, design loop, launch, and keeping it current.",
+  "author": {
+    "name": "Lawrence Gomez"
+  },
+  "homepage": "https://github.com/lawrencegomez/brand-builder-toolkit",
+  "repository": "https://github.com/lawrencegomez/brand-builder-toolkit",
+  "keywords": [
+    "branding",
+    "design-system",
+    "website",
+    "paper",
+    "typography",
+    "copywriting"
+  ],
+  "license": "MIT"
+}

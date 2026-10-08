@@ -1,0 +1,71 @@
+/*
+  Design tokens: the single source of truth for how the site looks.
+  Pages use ONLY these variables. Change a value here and every page follows.
+  The values below are placeholders: replace every one in Phase 5.
+  Keep names in sync with the Paper tokens and brand/DESIGN.md.
+*/
+
+/* Fonts: replace with the Phase 4 pairing (load only the weights you use) */
+@import url("https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,800&f[]=general-sans@400,500,600&display=swap");
+
+:root {
+  /* Color, by job */
+  --color-bg: #f3f4f2;
+  --color-surface: #ffffff;
+  --color-text: #17191c;
+  --color-text-muted: #545b63;
+  --color-border: #dcdfe2;
+  --color-accent: #2448d8;
+  --color-accent-contrast: #ffffff;
+
+  /* Type families */
+  --font-display: "Cabinet Grotesk", system-ui, sans-serif;
+  --font-body: "General Sans", system-ui, sans-serif;
+
+  /* Type scale (fluid: min, preferred, max) */
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  --text-xl: clamp(1.375rem, 1.1rem + 1vw, 1.75rem);
+  --text-2xl: clamp(2rem, 1.4rem + 2.4vw, 3rem);
+  --text-hero: clamp(2.75rem, 1.6rem + 5vw, 5.5rem);
+
+  --leading-tight: 1.05;
+  --leading-snug: 1.25;
+  --leading-body: 1.6;
+  --tracking-tight: -0.025em;
+  --tracking-label: 0.06em;
+  --measure: 65ch;
+
+  /* Spacing (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+  --section-pad: clamp(var(--space-8), 10vw, var(--space-10));
+
+  /* Shape and depth */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgb(23 25 28 / 0.06), 0 2px 8px rgb(23 25 28 / 0.05);
+  --shadow-md: 0 8px 30px rgb(23 25 28 / 0.10);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 160ms;
+  --duration-base: 320ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "brand-builder-toolkit",
+  "owner": {
+    "name": "Lawrence Gomez",
+    "url": "https://github.com/lawrencegomez"
+  },
+  "description": "Guided brand, design system, and website builder for non-technical founders.",
+  "plugins": [
+    {
+      "name": "brand-builder-toolkit",
+      "source": ".",
+      "description": "From idea to a live, on-brand website: discovery, references, typography, design system (Paper), copy, assets, build, design loop, launch, and keeping it current.",
+      "license": "MIT"
+    }
+  ]
+}

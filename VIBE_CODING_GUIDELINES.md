@@ -1,6 +1,6 @@
 # Vibe Coding Guardrails (Karpathy-Inspired)
 
-These are behavioral guidelines to reduce common LLM coding mistakes when using AI tools (like Claude Code or Cursor) for rapid "vibe coding." Merge these with your project-specific instructions as needed.
+These are behavioral guidelines to reduce common LLM coding mistakes when using AI tools (like Claude Code, Codex, or Antigravity) for rapid "vibe coding." Merge these with your project-specific instructions as needed.
 
 **Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
 
@@ -70,7 +70,9 @@ One of the biggest mistakes beginners make is keeping a single AI conversation g
 - **Fresh Start:** Once the AI writes that handoff document, immediately close the conversation and start a completely fresh thread.
 - **The Prompt:** In the new thread, point the AI to the handoff document: *"Read the handoff document at [Path] and continue the next step."*
 
-This guarantees the AI stays sharp, focused, and mathematically precise, rather than collapsing under the weight of a massive chat history.
+A fresh thread with a good handoff does better work than a long, tired one.
+
+In the Brand Builder Toolkit this is built in: the agent keeps `brand/PROGRESS.md` up to date, so a new chat only needs "continue my brand builder project".
 
 ---
 
