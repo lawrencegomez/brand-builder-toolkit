@@ -8,6 +8,13 @@ description: Plans and creates the site's images, graphics, icons, logo files, a
 Goal: assets that look like *this* brand, not stock or obvious AI. Spend money only
 when nothing free can do the job.
 
+**Physical products are the exception to "free first."** If the business sells a thing
+people hold (food, drink, cosmetics, candles, apparel), the product has to look real.
+Code-drawn 3D or illustrated stand-ins read as fake to customers: in the toolkit's own
+dry run, the owner called a Three.js honey jar "terrible, does not look like a real
+product." So for product slots, the ladder is: their own product photos, then
+photoreal generation (rung 7), and code 3D only as a placeholder they know is temporary.
+
 ## Step 1: Make an asset list
 
 Read `brand/COPY.md` (sections) and `DESIGN.md`. List every visual slot: logo,
@@ -22,9 +29,8 @@ any video or animation. For each, note what it must communicate.
 2. **Code-drawn graphics**: SVG shapes, patterns, gradients, illustrations, and
    icon-style graphics made directly in code from the design tokens. Free, sharp at any
    size, perfectly on-brand. Good for backgrounds, dividers, diagrams, simple icons.
-   **Simple products can be real 3D in code** (Three.js): a jar, bottle, can, box, or
-   candle built from a few shapes, lit, and turned by scroll. Free, and it can do things
-   a photo cannot (change color, fill, rotate). Two gotchas: a see-through glass made
+   Products can be drawn as 3D in code (Three.js) as a free placeholder, but it will
+   not pass as a real product (see the note above). Two gotchas if you do: a see-through glass made
    with `transmission` hides anything see-through inside it (use a thin transparent
    shell for the glass), and test colors with `NeutralToneMapping`. When the scene
    reads scroll progress, guard every division (`Math.max(1, travel)`): under reduced
@@ -47,6 +53,27 @@ any video or animation. For each, note what it must communicate.
    exists, explain why the free rungs fall short, and **agree on a spend limit before
    generating anything**. Connection steps are in `../brand-builder/references/stack.md`.
    Draft at low resolution first; produce the final only after they approve the draft.
+   What worked in the dry run (Higgsfield CLI, about 120 credits for a full product film):
+   - **One master, then references.** Generate one hero product shot. Make every
+     variant (other flavors, colors) with the master as an image reference and the words
+     "same jar, plinth, light, and framing; change only the label and the contents."
+     Five shots then look like one photo shoot. Check every label for spelling.
+   - **Shared style text.** Write the lighting, background, lens, and framing once and
+     paste it word for word into every prompt. Keep the product at the same spot in
+     every frame (for example 62% across) so text has a clear side and clips cut cleanly.
+   - **Video between two stills.** A clip with a start image and an end image (Kling
+     3.0 `--start-image` and `--end-image`) turns one product into the next. Start a
+     follow-on clip from the previous clip's exact last frame (`ffmpeg -sseof -0.05`).
+   - **Spell out the order of events and the physics.** "First the lid lifts off, then
+     the honey drains inside the glass, then new honey pours into the open jar, then the
+     lid comes back." Add "no hands" and "liquid only enters or leaves through the open
+     mouth." Without this, the first takes poured honey through a closed lid.
+   - **Check frames before using a clip.** Pull 5 to 6 frames per clip into one contact
+     sheet and look; reroll only the clip that fails. Sound off on every clip.
+   - **Scrubbed video needs dense keyframes** (scroll-craft's `encode.sh`) and a local
+     server that supports range requests (scroll-craft's `serve.mjs`, not Python's
+     http.server). Load only the first clip with the page; fetch the rest on first
+     scroll. Under reduced motion, show stills and download no video.
 
 Present the plan as a short table (slot, tool, why, cost) and get a yes.
 

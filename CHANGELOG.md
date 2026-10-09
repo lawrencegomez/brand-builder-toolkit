@@ -23,6 +23,9 @@ first evolve change) turned up these fixes:
   softer wording on free-tier terms.
 - Evolve and design loop: color changes also hunt the old hex in SVGs, and component
   fixes go back to Paper in the same round.
+- Product brands now go to photoreal visuals first. The dry run's code-drawn 3D jar was
+  rejected as fake-looking; the replacement (Higgsfield stills plus scroll-scrubbed Kling
+  clips) and its recipe are in `visual-assets`, and the Higgsfield CLI is in `stack.md`.
 
 ## 2026-10-08: v2 refresh
 

@@ -108,6 +108,12 @@ To connect, add the MCP server `https://mcp.higgsfield.ai/mcp`:
   then run `/mcp` to sign in
 - Codex: `codex mcp add higgsfield --url https://mcp.higgsfield.ai/mcp`
 If a command fails, open https://higgsfield.ai/mcp and follow the current instructions.
+Higgsfield also has a command-line tool (`higgsfield`, sign in with
+`higgsfield auth login`) that is easier for an agent to script: `higgsfield account
+status` shows credits, `higgsfield generate cost <model> ...` prices a job for free,
+`higgsfield generate create <model> ... --wait --json` runs it. If `generate cost`
+fails on a local file, run `higgsfield upload create <file>` first and pass the
+returned ID instead.
 Always agree on a spend limit with the person before generating anything.
 
 ## Serving and screenshotting the site
