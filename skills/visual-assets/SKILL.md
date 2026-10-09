@@ -68,6 +68,18 @@ any video or animation. For each, note what it must communicate.
      the honey drains inside the glass, then new honey pours into the open jar, then the
      lid comes back." Add "no hands" and "liquid only enters or leaves through the open
      mouth." Without this, the first takes poured honey through a closed lid.
+   - **Make the product read as itself.** A glowing jar with a black lid and a square
+     label on a plinth reads as a luxury candle, not honey. Light the subject the way
+     the real thing shows off (honey, oil, drinks: from behind, so light passes through),
+     show it in use (open jar, dipper, a drip), and avoid the look of a neighboring
+     category. Ask "what else could this be mistaken for?" before generating variants.
+   - **Leave room and go slow.** Keep the product to about a third of the frame so the
+     motion (a pour, a fall) has space; ask for 10-second clips with one slow event
+     each, not 5-second clips with four. Models frame tighter than asked, so scaling the
+     film down in CSS with feathered edges is a free fix.
+   - **Pace the scroll, not just the clip.** Give each clip several screens of scroll
+     and let the video trail the wheel (ease the playhead toward the scroll position
+     over about half a second) so a flick never snaps it forward.
    - **Check frames before using a clip.** Pull 5 to 6 frames per clip into one contact
      sheet and look; reroll only the clip that fails. Sound off on every clip.
    - **Scrubbed video needs dense keyframes** (scroll-craft's `encode.sh`) and a local

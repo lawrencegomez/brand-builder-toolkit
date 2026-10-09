@@ -26,6 +26,9 @@ first evolve change) turned up these fixes:
 - Product brands now go to photoreal visuals first. The dry run's code-drawn 3D jar was
   rejected as fake-looking; the replacement (Higgsfield stills plus scroll-scrubbed Kling
   clips) and its recipe are in `visual-assets`, and the Higgsfield CLI is in `stack.md`.
+- Generated product footage: avoid neighbor-category looks (a honey jar shot like a
+  candle), light the product the way it shows off, leave room for motion, use slow
+  10-second clips, and pace scroll with a trailing playhead.
 
 ## 2026-10-08: v2 refresh
 
