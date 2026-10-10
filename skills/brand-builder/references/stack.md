@@ -113,7 +113,9 @@ Higgsfield also has a command-line tool (`higgsfield`, sign in with
 status` shows credits, `higgsfield generate cost <model> ...` prices a job for free,
 `higgsfield generate create <model> ... --wait --json` runs it. If `generate cost`
 fails on a local file, run `higgsfield upload create <file>` first and pass the
-returned ID instead.
+returned ID instead. Start jobs a few seconds apart, not all at once, and confirm each
+returns a job ID: a burst of parallel jobs can be refused with "not_enough_credits"
+even when the balance looks fine.
 Always agree on a spend limit with the person before generating anything.
 
 ## Serving and screenshotting the site

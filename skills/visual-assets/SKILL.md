@@ -80,6 +80,15 @@ any video or animation. For each, note what it must communicate.
    - **Pace the scroll, not just the clip.** Give each clip several screens of scroll
      and let the video trail the wheel (ease the playhead toward the scroll position
      over about half a second) so a flick never snaps it forward.
+   - **Hidden cuts.** Video models sometimes jump-cut mid-clip even when told not to,
+     which feels like a glitch under scroll. Find them with
+     `ffmpeg -i clip.mp4 -vf "select='gt(scene,0.25)',showinfo" -f null -` (any
+     timestamp printed is a cut). Fix by giving the clip both a start and an end frame:
+     the model then has to travel continuously between them.
+   - **No dead screens between sections.** Never fade the film to black between acts.
+     End each transition clip on the exact still the next section opens with (for
+     example pull back out of a close-up onto the first product), and let text sit on
+     that still.
    - **Check frames before using a clip.** Pull 5 to 6 frames per clip into one contact
      sheet and look; reroll only the clip that fails. Sound off on every clip.
    - **Scrubbed video needs dense keyframes** (scroll-craft's `encode.sh`) and a local

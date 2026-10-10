@@ -29,6 +29,8 @@ first evolve change) turned up these fixes:
 - Generated product footage: avoid neighbor-category looks (a honey jar shot like a
   candle), light the product the way it shows off, leave room for motion, use slow
   10-second clips, and pace scroll with a trailing playhead.
+- Hidden jump cuts in generated clips (detect with ffmpeg, fix with start and end frames),
+  no fade-to-black between sections, and staggered Higgsfield job launches.
 
 ## 2026-10-08: v2 refresh
 
