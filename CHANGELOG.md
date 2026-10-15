@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-15: lessons from the Motion Site Studio dry run
+
+Rebuilding Oso Goloso Honey with Motion Site Studio (566 credits) added:
+
+- `visual-assets`: only chain clips between keyframes with the same arrangement, check
+  every start pin, trim an overshoot instead of rerolling, never crop a keyframe through
+  a label, and watch a whole loop before using it.
+- `brand-builder`: Motion Site Studio's critic captures break sticky scroll scenes; use
+  its `shots.js` for the critics instead.
+
 ## 2026-10-14: Motion Site Studio replaces scroll-craft
 
 - The scroll-driven lane now uses Jack Roberts' Motion Site Studio instead of Nate Herk's

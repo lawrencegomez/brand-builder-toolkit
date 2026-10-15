@@ -128,6 +128,11 @@ the phase yourself.
        in Paper if connected).
      - At its design loop step, use its own `references/design-loop.md`, not this
        toolkit's `design-loop` skill (same name, different method).
+     - Its `pack.sh` captures (through `capture.js`) set the page body to
+       `overflow: auto` to hide cookie banners, which breaks `position: sticky`: every
+       pinned film and section shows up as a black screen and the critics fail the page
+       for it. For the critics' pictures, use its `shots.js` with scroll positions every
+       0.7 screen instead, and look at a few captures yourself before trusting a verdict.
      - Keep its Off / On / X-ray switch and check the Off mode with reduced motion on.
 3. **Mockups first.** Make 2 or 3 genuinely different directions of the home page hero
    and one inner section, all built from `styles/tokens.css`. Put them in Paper on the

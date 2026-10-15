@@ -85,6 +85,22 @@ any video or animation. For each, note what it must communicate.
      `ffmpeg -i clip.mp4 -vf "select='gt(scene,0.25)',showinfo" -f null -` (any
      timestamp printed is a cut). Fix by giving the clip both a start and an end frame:
      the model then has to travel continuously between them.
+   - **Only chain between keyframes with the same arrangement.** A clip can shrink or
+     grow what is in frame, but it cannot rearrange it. Going from three jars on three
+     separate plinths to five jars side by side, the model ignored the start image twice
+     (60 credits each) and opened on a framing of its own. Before paying for a clip,
+     check that its two keyframes show the same objects in the same places, only larger
+     or smaller. After every clip, compare its first frame with the start image you sent
+     (SSIM below about 0.7 means the pin was ignored). A clip that missed its pin but has
+     no cuts can still be used as its own scene somewhere else on the page.
+   - **Trim an overshoot instead of rerolling.** If a clip travels past its end keyframe,
+     find the frame closest to the keyframe (`ffmpeg -i clip.mp4 -loop 1 -i kf.png -lavfi
+     "[0][1]ssim=stats_file=s.txt:shortest=1" -f null -`), cut the clip there, and start
+     the next clip from that frame. Free, and the join stays exact.
+   - **Never crop a keyframe through a label.** A word cut in half at the frame edge comes
+     back misspelled as the camera reveals the rest of it.
+   - **Watch a whole loop before using it.** A drip loop came back with gold beads
+     floating above the dippers. Look at a frame every half second, not just the seam.
    - **No dead screens between sections.** Never fade the film to black between acts.
      End each transition clip on the exact still the next section opens with (for
      example pull back out of a close-up onto the first product), and let text sit on
