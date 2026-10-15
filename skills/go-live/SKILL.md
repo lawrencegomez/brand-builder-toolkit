@@ -37,9 +37,9 @@ placeholder to replace in Step 3.
 - Only the font weights in use; `font-display: swap`
 - If the agent has Lighthouse or browser devtools, run it on mobile and fix the top issues
   (`npx --yes lighthouse@12 <url> --chrome-flags="--headless=new"` works anywhere)
-- Scroll-craft pages: write each pinned act's height into the HTML
-  (`style="height:220vh"` for `data-sc-span="2.2"`) so the page does not jump while
-  the engine loads. In the dry run this alone took mobile performance from 35 to 97.
+- Scroll-driven pages: if section heights are set by JavaScript after load, write them
+  into the HTML instead (for example `style="height:220vh"`) so the page does not jump
+  while it loads. In the dry run this alone took mobile performance from 35 to 97.
 
 **Converts**
 - The primary action from BRAND.md is visible without scrolling, on mobile too

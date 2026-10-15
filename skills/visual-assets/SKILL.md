@@ -91,9 +91,10 @@ any video or animation. For each, note what it must communicate.
      that still.
    - **Check frames before using a clip.** Pull 5 to 6 frames per clip into one contact
      sheet and look; reroll only the clip that fails. Sound off on every clip.
-   - **Scrubbed video needs dense keyframes** (scroll-craft's `encode.sh`) and a local
-     server that supports range requests (scroll-craft's `serve.mjs`, not Python's
-     http.server). Load only the first clip with the page; fetch the rest on first
+   - **Scrub frames, not a video, when you can.** Motion Site Studio's `engine.js` plays
+     the film as a sequence of still frames on a canvas, which stays smooth on phones.
+     If you do scrub a `<video>`, encode it with a keyframe every few frames and preview
+     it on a local server that supports range requests (not Python's http.server). Load only the first clip with the page; fetch the rest on first
      scroll. Under reduced motion, show stills and download no video.
 
 Present the plan as a short table (slot, tool, why, cost) and get a yes.
@@ -117,7 +118,8 @@ Paper "Decisions" page.
 - Record every source and license in `assets/LICENSES.md` (own photo, made in code,
   Flaticon author + credit line, Higgsfield, Remotion...). Add required credits to the
   site footer.
-- For scroll-driven sites, `scroll-craft` has its own asset and encoding workflow; follow it.
+- For scroll-driven sites, `motion-site-studio` has its own asset, chaining and
+  encoding workflow; follow it.
 
 Update `brand/PROGRESS.md`, show the Phase 7 card, recommend Phase 8 (mockups and build
 in the `brand-builder` skill).

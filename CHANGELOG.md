@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-10-14: Motion Site Studio replaces scroll-craft
+
+- The scroll-driven lane now uses Jack Roberts' Motion Site Studio instead of Nate Herk's
+  scroll-craft: references first, a Higgsfield film chained frame to frame with cut scans,
+  a code-drawn moving graphic per section, an Off / On / X-ray switch, and three fresh
+  reviewers. It installs from a download (steps in `stack.md`); on Windows it needs WSL.
+- Resources: Jack's Claude Motion Lab (20 motion prompts), the Motion Website System, and
+  the RISE method for motion drawn in code.
+- Lessons from the scroll-craft dry run that apply to any scroll site (reduced motion,
+  heights written into the HTML, slow pacing) are kept in `go-live` and `visual-assets`.
+
 ## 2026-10-08: fixes from a full end-to-end dry run
 
 A complete run as a made-up brand (Oso Goloso Honey: discovery to launch checklist to a

@@ -59,7 +59,9 @@ ask for the same thing on your next project.
 | 11 | Keep improving | Ask for new pages or changes | Changes that stay on-brand |
 
 For scroll-driven, cinematic, or 3D-feeling sites, step 8 uses
-[scroll-craft](https://github.com/nateherkai/scroll-craft) by Nate Herk.
+[Motion Site Studio](https://app.notion.com/p/The-Motion-Website-System-References-Claude-Higgsfield-3f1e8d6bd1378119ad06f27fd4755213#45c8450161724d8daf52a8ea53e8fd47) by Jack Roberts: a film made with Higgsfield that plays
+as you scroll, plus a moving graphic in every section. You download it from his page;
+your agent installs it for you.
 
 ## What it costs
 
@@ -143,7 +145,7 @@ It also installs and leans on work by other people:
 [grill-me](https://github.com/mattpocock/skills) (Matt Pocock),
 [marketing skills](https://github.com/coreyhaines31/marketingskills) (Corey Haines),
 [humanizer](https://github.com/blader/humanizer) (blader),
-[scroll-craft](https://github.com/nateherkai/scroll-craft) (Nate Herk),
+[Motion Site Studio](https://app.notion.com/p/The-Motion-Website-System-References-Claude-Higgsfield-3f1e8d6bd1378119ad06f27fd4755213#45c8450161724d8daf52a8ea53e8fd47) and Design Teardown (Jack Roberts),
 [Remotion skills](https://github.com/remotion-dev/skills),
 [designlang](https://github.com/Manavarya09/design-extract), and
 [awesome-design-md](https://github.com/VoltAgent/awesome-design-md).

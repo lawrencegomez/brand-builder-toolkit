@@ -1,6 +1,6 @@
 ---
 name: update-toolkit
-description: Updates the Brand Builder Toolkit and every companion skill and plugin (taste-skill, impeccable, Emil's motion skills, grilling, Corey Haines' marketing skills, humanizer, scroll-craft, Remotion, Paper) to their latest versions in Claude Code, Codex, or Antigravity, and reports what changed. Use when someone says "update the toolkit", "update my skills", "update everything", "are my skills up to date", or "get the latest brand builder".
+description: Updates the Brand Builder Toolkit and every companion skill and plugin (taste-skill, impeccable, Emil's motion skills, grilling, Corey Haines' marketing skills, humanizer, Motion Site Studio, Remotion, Paper) to their latest versions in Claude Code, Codex, or Antigravity, and reports what changed. Use when someone says "update the toolkit", "update my skills", "update everything", "are my skills up to date", or "get the latest brand builder".
 ---
 
 # Update Toolkit
@@ -20,7 +20,14 @@ If a skill this toolkit expects is missing, install it with the matching line fr
 `brand-builder` skill's `references/stack.md`. If the toolkit's stack list has new
 entries since the last install, install those too.
 
-## 2. impeccable (own installer)
+## 2. Skills installed from a download (no auto-update)
+
+Motion Site Studio (Jack Roberts) comes as a zip, so `npx skills update` does not touch
+it. If it is installed, ask whether they want the latest: they download the zip again
+from the link in `references/stack.md`, then replace the old folder and rerun
+`npm install` in its `scripts` folder. Never mix the old and new folders.
+
+## 3. impeccable (own installer)
 
 ```bash
 npx impeccable update
@@ -28,22 +35,22 @@ npx impeccable update
 
 Codex users: open `/hooks` afterward and re-approve the hook if asked.
 
-## 3. Claude Code plugins (only if installed as plugins)
+## 4. Claude Code plugins (only if installed as plugins)
 
 In Claude Code: `/plugin marketplace update` then `/reload-plugins`. Or from a terminal:
 `claude plugin marketplace update <marketplace>` and `claude plugin update <plugin>@<marketplace>`.
-Relevant ones: `brand-builder-toolkit`, `paper-desktop@paper`, `hyperframes@hyperframes`,
-`nateherk-design@nateherk`. Offer to turn on auto-update for each: `/plugin`, Marketplaces
-tab, select the marketplace, Enable auto-update.
+Relevant ones: `brand-builder-toolkit`, `paper-desktop@paper`, `hyperframes@hyperframes`.
+Offer to turn on auto-update for each: `/plugin`, Marketplaces tab, select the
+marketplace, Enable auto-update.
 
-## 4. Apps and tools
+## 5. Apps and tools
 
 - Paper Desktop updates itself; ask them to accept the update prompt if one is showing.
 - Claude Code: `claude update`. Codex CLI: `npm i -g @openai/codex@latest` (or the
   desktop app's own updater). Node.js: suggest the current LTS from nodejs.org if theirs
   is older than 18.
 
-## 5. Report
+## 6. Report
 
 Tell the person, in plain English: what was updated, anything new worth trying (read
 the changelogs of skills that changed, for example scroll-craft's `CHANGELOG.md`), and

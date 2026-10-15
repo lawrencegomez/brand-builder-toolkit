@@ -37,7 +37,9 @@ finds something they like, ask them to paste the link back so you can analyze it
 ## Scroll and 3D examples (Phase 8)
 | Source | Use it for |
 |---|---|
-| [scroll-craft examples](https://github.com/nateherkai/scroll-craft#three-builds-three-completely-different-pages) | Three very different scroll-driven sites built with the same skill |
+| [Claude Motion Lab](https://claude.ai/artifact/WMWm1MRELiSoWfeBpHTDKr) (Jack Roberts) | 20 live website motion pieces (footers, menus, galleries, cursors) with the exact prompt for each |
+| [The Motion Website System](https://app.notion.com/p/The-Motion-Website-System-References-Claude-Higgsfield-3f1e8d6bd1378119ad06f27fd4755213) (Jack Roberts) | How Motion Site Studio works, its costs, and the rules that stop scroll films jumping |
+| [Motion drawn in code: RISE](https://app.notion.com/p/Motion-drawn-in-code-The-RISE-method-3e5e8d6bd137815481d7faea497f37fc) (Jack Roberts) | A prompt method for motion graphics drawn in code, with a 10-point checklist |
 
 ## Rules for anything you download
 - Fonts: confirm the license allows web use. Google Fonts and Open Foundry fonts are

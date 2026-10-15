@@ -110,23 +110,25 @@ the phase yourself.
      motion skills (`emil-design-eng`, `find-animation-opportunities`) for tasteful
      motion. Use `soft-skill`, `minimalist-skill`, or `brutalist-skill` when the brand
      clearly points that way.
-   - **Scroll-driven / cinematic / 3D feel**: `scroll-craft` (by Nate Herk). Offer it
-     whenever the person says animated, immersive, cinematic, 3D, "like an Apple page",
-     or the brand is a product or experience that benefits from a story told by
-     scrolling. Its own-photos route is free; generated footage costs money, so get a
-     yes and a budget first. How to run it inside this toolkit:
-     - Run its `doctor` script first. If its helper scripts print nothing, it was
-       installed as a symlink; reinstall with `--copy` (see stack.md).
-     - Hand it the brand files instead of re-interviewing: its BRIEF.md can reuse
-       BRAND.md, INSPIRATION.md, and COPY.md, and ask only what they do not answer.
-     - Its "directions" are page grammars: pitch 2 or 3 grammars as the mockup step
-       (a key frame each, in Paper if connected) instead of generic page mockups.
-     - Build the page at the project root (`index.html`), map its `--sc-*` tokens to
-       `styles/tokens.css`, and keep its BRIEF and FINGERPRINTS in `scrollcraft/`.
-     - Check it with reduced motion on before calling it done: the engine keeps pinned
-       acts at full height, so collapse them (`[data-sc-act]{height:auto !important}`)
-       and lay a sideways rail out as a plain list. Also write each pinned act's height
-       into the HTML so the page does not jump while loading (see go-live).
+   - **Scroll-driven / cinematic / 3D feel**: `motion-site-studio` (by Jack Roberts).
+     Offer it whenever the person says animated, immersive, cinematic, 3D, "like an
+     Apple page", or the brand is a product people buy that should look real. Generated
+     footage costs Higgsfield credits (its own quote, about 100 to 330 for a site), so
+     get a yes and a budget first; without Higgsfield it draws everything in code.
+     Install steps are in `references/stack.md` (it is a download, not a command).
+     How to run it inside this toolkit:
+     - Set its `WORKDIR` to this project folder. It builds the site in `site/`; the
+       go-live `dist/` step copies from there.
+     - Hand it what earlier phases made instead of starting over: the reference
+       screenshots from `brand/references/` are its step 1 references, `BRAND.md` and
+       `COPY.md` answer most of its interview, and `DESIGN.md` plus
+       `styles/tokens.css` are its `design-system.md`. It should ask only what those
+       files do not answer.
+     - Its two concepts are the mockup step for this lane (show a key frame of each,
+       in Paper if connected).
+     - At its design loop step, use its own `references/design-loop.md`, not this
+       toolkit's `design-loop` skill (same name, different method).
+     - Keep its Off / On / X-ray switch and check the Off mode with reduced motion on.
 3. **Mockups first.** Make 2 or 3 genuinely different directions of the home page hero
    and one inner section, all built from `styles/tokens.css`. Put them in Paper on the
    "Mockups" page if Paper is connected, otherwise as local HTML files they can open

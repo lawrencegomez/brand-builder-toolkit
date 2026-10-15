@@ -42,9 +42,8 @@ npx skills add coreyhaines31/marketingskills --skill copywriting copy-editing si
 # Makes writing sound human
 npx skills add blader/humanizer -g AGENTS -y
 
-# Scroll-driven, cinematic, 3D-feeling sites (Nate Herk). --copy matters: its
-# helper scripts silently do nothing when installed as a symlink.
-npx skills add nateherkai/scroll-craft -g AGENTS --copy -y
+# Scroll-driven, cinematic, 3D-feeling sites: Motion Site Studio (Jack Roberts).
+# Not on GitHub, so it is installed by hand: see "Motion Site Studio" below.
 
 # Design critique and refinement (impeccable has its own installer)
 npx impeccable install --providers=claude,codex --scope=global
@@ -96,6 +95,28 @@ Setup:
 
 No Paper? Use Claude artifacts when running in Claude Desktop or claude.ai, otherwise
 the local `design-system.html` page and `mockups/` folder. The project works either way.
+
+## Motion Site Studio (for scroll-driven, cinematic sites)
+
+Jack Roberts' skill for a "3D motion website": a Higgsfield film that plays as you scroll,
+a code-drawn moving graphic in every section, and its own reviewers. It is shared as a zip,
+not on GitHub, so install it only when the person picks the scroll lane:
+
+1. Ask them to open https://app.notion.com/p/The-Motion-Website-System-References-Claude-Higgsfield-3f1e8d6bd1378119ad06f27fd4755213#45c8450161724d8daf52a8ea53e8fd47, click `motion-site-studio.zip` under "Download the skill",
+   and tell you where it saved (usually Downloads).
+2. Unzip it and copy the `motion-site-studio` folder into the skills folder:
+   Claude Code `~/.claude/skills/`, Codex `~/.agents/skills/`. The file must end up at
+   `.../skills/motion-site-studio/SKILL.md`. Restart the agent.
+3. Tools it needs: Node 18+, ffmpeg, Python 3 with numpy and Pillow, Google Chrome, then
+   `cd <skills>/motion-site-studio/scripts && npm install` once. For generated footage
+   also the Higgsfield CLI (`npm install -g @higgsfield/cli`, `higgsfield auth login`).
+   On macOS, if `pip3 install pillow` is refused ("externally managed"), use
+   `brew install pillow numpy`.
+4. **Windows:** its scripts are written for zsh, so run the agent inside WSL (Ubuntu),
+   or skip this lane and use the classic site lane.
+
+Without Higgsfield it still runs, drawing all motion in code, and says so. Its own cost
+table (October 2026): a small site is about 100 credits, a standard one about 330.
 
 ## Higgsfield (only when it is actually needed)
 
