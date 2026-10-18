@@ -13,7 +13,8 @@ Local beats browser. Recommend, in this order, whichever the person already pays
 | Codex (CLI or desktop app) | https://chatgpt.com/codex | `codex` |
 | Antigravity | https://antigravity.google | `antigravity` |
 
-Needs: Node.js 18+ (https://nodejs.org, LTS) and git (https://git-scm.com). On Windows,
+Needs: Node.js 22+ (https://nodejs.org, LTS), git (https://git-scm.com), and Google Chrome
+(Taste Skill v2 checks pages in a real browser). On Windows,
 `winget install OpenJS.NodeJS.LTS Git.Git` works from PowerShell; on macOS,
 `brew install node git` if Homebrew exists, otherwise the nodejs.org installer.
 
@@ -27,8 +28,9 @@ Replace `AGENTS` with one `-a` per agent the person uses, for example
 # This toolkit
 npx skills add lawrencegomez/brand-builder-toolkit --skill '*' -g AGENTS -y
 
-# Design taste and house style (Leonxlnx)
-npx skills add Leonxlnx/taste-skill --skill taste-skill soft-skill minimalist-skill brutalist-skill redesign-skill brandkit output-skill imagegen-frontend-web -g AGENTS -y
+# Design taste and house style (Leonxlnx): Taste Skill v2 plus its specialist skills.
+# These are install names; the folders are named differently (taste-skill, soft-skill...).
+npx skills add Leonxlnx/taste-skill --skill design-taste-frontend redesign-existing-projects high-end-visual-design minimalist-ui industrial-brutalist-ui brandkit full-output-enforcement imagegen-frontend-web -g AGENTS -y
 
 # Motion and polish (Emil Kowalski)
 npx skills add emilkowalski/skills --skill emil-design-eng apple-design find-animation-opportunities review-animations animation-vocabulary -g AGENTS -y

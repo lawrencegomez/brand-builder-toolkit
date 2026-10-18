@@ -139,7 +139,7 @@ and Flaticon, are listed in [resources.md](skills/brand-builder/references/resou
 | `update-toolkit` | Keeps everything current |
 
 It also installs and leans on work by other people:
-[taste-skill](https://github.com/Leonxlnx/taste-skill) (Leonxlnx),
+[Taste Skill v2](https://github.com/Leonxlnx/taste-skill) (Leonxlnx),
 [impeccable](https://github.com/pbakaus/impeccable) (Paul Bakaus),
 [Emil Kowalski's skills](https://github.com/emilkowalski/skills),
 [grill-me](https://github.com/mattpocock/skills) (Matt Pocock),

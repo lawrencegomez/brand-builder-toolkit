@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-10-17: Taste Skill v2
+
+- The classic site lane now uses Taste Skill v2 (`design-taste-frontend`, Leonxlnx): it
+  deals three researched art directions from a study of 247 gallery sites, the person
+  picks one, and its own checks measure the page in a real browser. It runs with
+  `--keep palette,type` so the colors and fonts from earlier phases stay.
+- Fixed the Taste install line in `stack.md`. It used folder names, and the installer
+  matches install names, so it quietly installed only `brandkit` and
+  `imagegen-frontend-web` (no Taste at all) while reporting success. If you installed
+  the toolkit before this date, run the new Taste line once. The toolkit now needs
+  Node 22 or newer and Chrome.
+- `visual-assets`: a new second rung, real pictures of the subject's world from open
+  collections (Wikimedia Commons, Openverse, museums) with credits, found by Taste's
+  `assets.mjs`.
+- `design-loop` also runs Taste's `lint.mjs` and `inspect.mjs`.
+
 ## 2026-10-17: Motion Site Studio film freeze
 
 - `brand-builder`: Motion Site Studio's film engine froze Chrome after a big scroll jump.

@@ -13,7 +13,7 @@ people hold (food, drink, cosmetics, candles, apparel), the product has to look 
 Code-drawn 3D or illustrated stand-ins read as fake to customers: in the toolkit's own
 dry run, the owner called a Three.js honey jar "terrible, does not look like a real
 product." So for product slots, the ladder is: their own product photos, then
-photoreal generation (rung 7), and code 3D only as a placeholder they know is temporary.
+photoreal generation (rung 8), and code 3D only as a placeholder they know is temporary.
 
 ## Step 1: Make an asset list
 
@@ -26,7 +26,14 @@ any video or animation. For each, note what it must communicate.
 1. **Real photos and video the person already has** (products, space, team, work).
    Always best for trust. Ask for them first. Clean them up: crop, color-match to the
    palette, compress (WebP or AVIF for images).
-2. **Code-drawn graphics**: SVG shapes, patterns, gradients, illustrations, and
+2. **Real pictures of their world from open collections.** No photos of their own is
+   rarely nothing: their city, street, materials, trade, and history are in Wikimedia
+   Commons, Openverse, and museum collections, free to use with a credit. Taste Skill
+   v2's finder searches them, downloads, and records the credits with no API key:
+   `node <taste skill folder>/scripts/assets.mjs "<query>"`, then `--get <ref>` and
+   `--credits`. Put the credits on the page. Never pass one of these off as the
+   product itself.
+3. **Code-drawn graphics**: SVG shapes, patterns, gradients, illustrations, and
    icon-style graphics made directly in code from the design tokens. Free, sharp at any
    size, perfectly on-brand. Good for backgrounds, dividers, diagrams, simple icons.
    Products can be drawn as 3D in code (Three.js) as a free placeholder, but it will
@@ -35,19 +42,19 @@ any video or animation. For each, note what it must communicate.
    shell for the glass), and test colors with `NeutralToneMapping`. When the scene
    reads scroll progress, guard every division (`Math.max(1, travel)`): under reduced
    motion pinned sections collapse, the travel becomes 0, and one NaN breaks the scene.
-3. **Icon sets**: Flaticon (https://www.flaticon.com) for icons in many styles; free
+4. **Icon sets**: Flaticon (https://www.flaticon.com) for icons in many styles; free
    icons need visible credit to the author. One icon style per site.
-4. **Motion in the page itself**: CSS and small JS animations (Emil's motion skills:
+5. **Motion in the page itself**: CSS and small JS animations (Emil's motion skills:
    `emil-design-eng`, `find-animation-opportunities`). Most "make it animated"
    requests are this, not video.
-5. **Code-rendered video**: Remotion (`remotion-best-practices`, `remotion-create`
+6. **Code-rendered video**: Remotion (`remotion-best-practices`, `remotion-create`
    skills) or HyperFrames make real MP4s from code: logo reveals, animated text,
    product explainers, looping hero backgrounds, launch videos. Free, editable, on-brand.
    Install from the optional add-ons in `../brand-builder/references/stack.md`.
-6. **AI image generation built into the agent or plan** (for example the
+7. **AI image generation built into the agent or plan** (for example the
    `imagegen-frontend-web` skill for hero concepts, or the agent's own image tool).
    Good for concept images and textures; check that results do not look generic.
-7. **Higgsfield** (paid, https://higgsfield.ai): photoreal footage or images that the
+8. **Higgsfield** (paid, https://higgsfield.ai): photoreal footage or images that the
    rungs above cannot make, for example a cinematic product shot in a setting they do
    not have, or video for a scroll-driven site. Only suggest it when a real need
    exists, explain why the free rungs fall short, and **agree on a spend limit before

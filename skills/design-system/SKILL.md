@@ -52,8 +52,13 @@ If you must rename, update `design-system.html` in the same step.
   and wide for calm brands, hard offset for bold ones).
 - **Motion**: 2 or 3 durations and easings, plus a reduced-motion rule.
 
-Use the `taste-skill` (or `soft-skill`, `minimalist-skill`, `brutalist-skill` when the
-brand points that way) to keep the result distinctive rather than template-like.
+Use Taste Skill v2 (`design-taste-frontend`; or `high-end-visual-design`,
+`minimalist-ui`, `industrial-brutalist-ui` when the brand points that way) to keep the
+result distinctive rather than template-like. When the person has no colors or fonts
+yet, a full Taste direction sheet (`node <taste skill folder>/scripts/draw.mjs --sector
+<sector> --brief "<one line>" --sections <roles> --direction <id>`) deals a researched
+type system and palette worth offering as one option. Some of its fonts come from
+Fontshare, which Paper cannot load; with Paper, offer only its Google Fonts choices.
 If the brand has no logo yet, sketch logo directions now so the system and the mark
 grow together (see the logo step in `visual-assets`).
 

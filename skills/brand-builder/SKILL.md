@@ -106,10 +106,28 @@ the phase yourself.
 
 1. Read `brand/BRAND.md`, `brand/INSPIRATION.md`, `DESIGN.md`, `brand/COPY.md`.
 2. **Pick the build lane** and say which in one line:
-   - **Classic site** (default): `taste-skill` for layout and house style, plus Emil's
-     motion skills (`emil-design-eng`, `find-animation-opportunities`) for tasteful
-     motion. Use `soft-skill`, `minimalist-skill`, or `brutalist-skill` when the brand
-     clearly points that way.
+   - **Classic site** (default): Taste Skill v2 (`design-taste-frontend`) for the art
+     direction and the build, plus Emil's motion skills (`emil-design-eng`,
+     `find-animation-opportunities`) for tasteful motion. If the look is already
+     settled, use `high-end-visual-design` (calm, soft), `minimalist-ui` (editorial), or
+     `industrial-brutalist-ui` (hard, Swiss) instead. Taste is for public pages, not
+     dashboards or app screens. How to run v2 inside this toolkit:
+     - Hand it what earlier phases made. `BRAND.md` is its subject inventory (the name
+       and what it means, the place, the numbers, the one constraint, the materials),
+       `COPY.md` is its argument (one claim per section), and the reference notes in
+       `brand/INSPIRATION.md` tell it what the person likes.
+     - Its `scripts/draw.mjs` deals three art directions. Run it with
+       `--keep palette,type` so it keeps the colors and fonts from Phases 4 and 5 and
+       only deals the layout, and pass `--have` only for pictures that really exist.
+       Show the person the three directions in one line each with your pick marked
+       "(Recommended)", and let them choose. This is the mockup step for this lane.
+     - Its house style bans common AI-page habits (small labels above headlines,
+       monospace, thin divider lines, gradients, numbered 01/02/03 sections). Where
+       that clashes with `DESIGN.md`, the person's design system wins; say so in one
+       line rather than quietly changing their choices.
+     - Its own checks (`scripts/lint.mjs`, then `scripts/inspect.mjs`, which screenshots
+       the page at 1440, 768, and 390 wide) run during the build. The `design-loop`
+       phase still follows. It needs Node 22+ and Chrome.
    - **Scroll-driven / cinematic / 3D feel**: `motion-site-studio` (by Jack Roberts).
      Offer it whenever the person says animated, immersive, cinematic, 3D, "like an
      Apple page", or the brand is a product people buy that should look real. Generated

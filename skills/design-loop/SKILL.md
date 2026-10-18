@@ -18,7 +18,10 @@ to see what you see.
 2. **Critique.** If `impeccable` is installed, run `impeccable critique` for the first
    round (thorough: two independent reviewers, scores, priorities; it reads `PRODUCT.md`
    and `DESIGN.md` at the project root) and `impeccable polish` or `audit` for later
-   rounds. Otherwise use the `redesign-skill` audit. Check against:
+   rounds. Otherwise use the `redesign-existing-projects` audit (Taste). If Taste
+   Skill v2 is installed, also run its `scripts/lint.mjs` and `scripts/inspect.mjs` on
+   the page: they measure headline length, faded or covered text, empty screens, and
+   other faults that are easy to miss by eye. Check against:
    - **Brand**: does it feel like the BRAND.md personality words? Would a stranger
      guess what the business is in 5 seconds?
    - **Hierarchy**: one clear focal point per section; the primary action obvious.

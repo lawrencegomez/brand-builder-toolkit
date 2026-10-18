@@ -1,6 +1,6 @@
 ---
 name: update-toolkit
-description: Updates the Brand Builder Toolkit and every companion skill and plugin (taste-skill, impeccable, Emil's motion skills, grilling, Corey Haines' marketing skills, humanizer, Motion Site Studio, Remotion, Paper) to their latest versions in Claude Code, Codex, or Antigravity, and reports what changed. Use when someone says "update the toolkit", "update my skills", "update everything", "are my skills up to date", or "get the latest brand builder".
+description: Updates the Brand Builder Toolkit and every companion skill and plugin (Taste Skill v2, impeccable, Emil's motion skills, grilling, Corey Haines' marketing skills, humanizer, Motion Site Studio, Remotion, Paper) to their latest versions in Claude Code, Codex, or Antigravity, and reports what changed. Use when someone says "update the toolkit", "update my skills", "update everything", "are my skills up to date", or "get the latest brand builder".
 ---
 
 # Update Toolkit
@@ -19,6 +19,13 @@ npx skills update -g -y     # update all of them to the latest version
 If a skill this toolkit expects is missing, install it with the matching line from the
 `brand-builder` skill's `references/stack.md`. If the toolkit's stack list has new
 entries since the last install, install those too.
+
+Taste Skill v2 (October 2026) is installed by its install name, `design-taste-frontend`,
+and its specialist skills have new install names too (`high-end-visual-design`,
+`minimalist-ui`, `industrial-brutalist-ui`, `redesign-existing-projects`,
+`full-output-enforcement`). If `npx skills list -g` does not show
+`design-taste-frontend`, run the Taste line from `stack.md` again. Taste v2 needs Node
+22 or newer (`node --version`).
 
 ## 2. Skills installed from a download (no auto-update)
 
