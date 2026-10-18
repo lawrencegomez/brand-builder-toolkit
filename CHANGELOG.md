@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-17: Motion Site Studio film freeze
+
+- `brand-builder`: Motion Site Studio's film engine froze Chrome after a big scroll jump.
+  Turn off its ImageBitmap window in the site's copy of `engine.js`, and test scroll sites
+  with two full passes in one tab.
+
 ## 2026-10-15: lessons from the Motion Site Studio dry run
 
 Rebuilding Oso Goloso Honey with Motion Site Studio (566 credits) added:

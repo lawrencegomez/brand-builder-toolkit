@@ -133,6 +133,12 @@ the phase yourself.
        pinned film and section shows up as a black screen and the critics fail the page
        for it. For the critics' pictures, use its `shots.js` with scroll positions every
        0.7 screen instead, and look at a few captures yourself before trusting a verdict.
+     - Its film engine (`engine.js`, copied into `site/vendor/`) decodes frames into
+       ImageBitmaps in a sliding window. In Chrome on a Mac that froze the whole tab after
+       a big scroll jump (scroll to the bottom, back to the top, scroll again), and plain
+       image frames scrolled smoother. In the site's copy, skip the window: in `Scrub`'s
+       `tick`, change `ensure(i);` to run only when the page passes `bitmaps: true`. Test
+       any scroll site with two full scroll passes in one tab, not one.
      - Keep its Off / On / X-ray switch and check the Off mode with reduced motion on.
 3. **Mockups first.** Make 2 or 3 genuinely different directions of the home page hero
    and one inner section, all built from `styles/tokens.css`. Put them in Paper on the
